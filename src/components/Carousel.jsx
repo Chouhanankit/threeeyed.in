@@ -5,24 +5,26 @@ import Button from "./Button";
 
 const carouselItems = [
   {
-    title: "Scale at Speed™",
-    text: "The Three-Eyed Promise",
+    title: "Build Bespoke Websites That Perform",
+    text: "Tailored Solutions for Unique Business Needs",
     description:
-      "Our promise to help enterprises across industries transform at speed and bring agility, resilience, and efficiency to their businesses.",
+      "We design and develop high-performance websites with intuitive user experiences, scalable architecture, and robust security.",
     videoUrl:
       "https://res.cloudinary.com/dg2seao8x/video/upload/v1746438535/4365142-uhd_3840_2160_25fps_ldwg9r.mp4",
   },
   {
-    title: "Aurora Pulse",
-    description: "A burst of animated color and galactic motion.",
-    text: "Tech Mahindra Unveils 'AI Delivered Right' to Help Enterprises Scale AI with Purpose and Precision",
+    title: "Boost Online Sales with Powerful E-Commerce",
+    text: "From Shopping Cart to Checkout-Fully Optimized",
+    description:
+      "We craft seamless e-commerce platforms with secure payment gateways, product management, and conversion-focused design.",
     videoUrl:
-      " https://res.cloudinary.com/dg2seao8x/video/upload/v1746428685/854228-hd_1920_1080_30fps_lbrihm.mp4",
+      "https://res.cloudinary.com/dg2seao8x/video/upload/v1746428685/854228-hd_1920_1080_30fps_lbrihm.mp4",
   },
   {
-    title: "Chromatic Storm",
-    description: "A radiant fusion of movement and color.",
-    text: "Three Eyed Financial Results for Q4 Fy'25 Announced",
+    title: "Web Experiences That Adapt to Every Screen",
+    text: "Optimized for Mobile, Tablet, and Desktop",
+    description:
+      "Our responsive design approach ensures your website looks stunning and functions flawlessly across all devices.",
     videoUrl:
       "https://res.cloudinary.com/dg2seao8x/video/upload/v1746440647/856949-hd_1920_1080_30fps_alpwp0.mp4",
   },
@@ -45,8 +47,14 @@ const Carousel = () => {
         {/* Left diagonal section - 60% */}
         <div className="absolute md:top-0 top-0 md:left-0 md:w-[100%]  h-full bg-white clip-left z-20 flex justify-center items-center mx-auto max-w-screen-xl">
           {/* Text Half */}
-          <div className="absolute text-black w-[90%] left-4 md:left-34 top-32 md:w-1/2 md:top-40 p-2 md:p-0 ">
-            <h1 className="text-2xl md:text-5xl font-bold mb-3 md:mb-6">
+          <div
+            data-aos="fade-up"
+            className="absolute text-black w-[90%] left-4 md:left-24 top-32 md:w-1/2 md:top-40 p-2 md:p-0 "
+          >
+            <h1
+              data-aos-duration="3000"
+              className="text-2xl md:text-5xl font-bold mb-3 md:mb-6"
+            >
               Scale at Speed
             </h1>
             <p className="text-[12px] w-[60%] md:w-full md:text-base">
@@ -91,9 +99,12 @@ const Carousel = () => {
 
           {/* Overlay Content */}
           <div className="relative z-10 flex flex-col justify-end items-end h-full w-full px-2 pb-10 md:pb-40 text-end mx-auto max-w-screen-xl">
-            <h1 className="text-xs md:text-3xl font-bold mb-4 md:mb-6 w-[65%] md:w-[40%]">
-              {item.text}
+            <h1 className="text-xs md:text-3xl font-bold md:mb-2 w-[65%] md:w-[40%]">
+              {item.title}
             </h1>
+            <p className="text-xs md:text-xs md:w-full w-65 text-gray-200 md:py-3 py-2">
+              {item.text}
+            </p>
             <Link to={"/"}>
               <Button />
             </Link>

@@ -1,6 +1,15 @@
 import React from "react";
 import { useRef, useEffect } from "react";
-import { ArrowsUpFromLine, CreditCard, Handshake, Home } from "lucide-react";
+import {
+  ArrowsUpFromLine,
+  Building2,
+  CreditCard,
+  Cross,
+  Handshake,
+  Home,
+  Package2,
+  TvMinimal,
+} from "lucide-react";
 import consumerImg from "../assets/consumersmall.jpg";
 import logisticsImg from "../assets/logisticssmall.jpg";
 import bankingImg from "../assets/bankingsmall.jpg";
@@ -12,43 +21,43 @@ import manufacturingImg from "../assets/manufa.jpg";
 
 const industries = [
   {
-    title: "Retail and Consumer Goods",
+    title: "E-Commerce & Retail",
     icon: <Home strokeWidth={1} className="w-15 h-15 text-black" />,
     image: consumerImg,
   },
   {
-    title: "Travel, Transportation",
+    title: "Travel & Transportation",
     icon: <ArrowsUpFromLine strokeWidth={1} className="w-15 h-15 text-black" />,
     image: logisticsImg,
   },
   {
-    title: "Banking and Financial Services",
+    title: "Finance & Fintech",
     icon: <CreditCard strokeWidth={1} className="w-15 h-15 text-black" />,
     image: bankingImg,
   },
   {
-    title: "Communications",
+    title: "Telecom & Communications",
     icon: <Handshake strokeWidth={1} className="w-15 h-15 text-black" />,
     image: communicationImg,
   },
   {
-    title: "Heathcare and Life Sciences",
-    icon: <Handshake strokeWidth={1} className="w-15 h-15 text-black" />,
+    title: "Healthcare & Medical Tech",
+    icon: <Cross strokeWidth={1} className="w-15 h-15 text-black" />,
     image: healthcareImg,
   },
   {
-    title: "Media and Entertainment",
-    icon: <Handshake strokeWidth={1} className="w-15 h-15 text-black" />,
+    title: "Media & Entertainment",
+    icon: <TvMinimal strokeWidth={1} className="w-15 h-15 text-black" />,
     image: mediaImg,
   },
   {
-    title: "Profssionnal Services",
-    icon: <Handshake strokeWidth={1} className="w-15 h-15 text-black" />,
+    title: "Professional Services",
+    icon: <Package2 strokeWidth={1} className="w-15 h-15 text-black" />,
     image: servicesImg,
   },
   {
-    title: "Manufacturing",
-    icon: <Handshake strokeWidth={1} className="w-15 h-15 text-black" />,
+    title: "Manufacturing & Logistics",
+    icon: <Building2 strokeWidth={1} className="w-15 h-15 text-black" />,
     image: manufacturingImg,
   },
 ];
@@ -63,6 +72,9 @@ const CardIndustries = ({ scrollRef }) => {
       >
         {extendedIndustries.map((industry, index) => (
           <div
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
             key={index}
             className="sm:w-62 lg:w-full w-62 border-2 border-gray-200 overflow-hidden shadow-sm group hover:shadow-md transition"
           >

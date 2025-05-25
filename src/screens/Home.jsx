@@ -4,6 +4,7 @@ import Capabilities from "../components/Capabilities";
 import Contact from "../components/Contact";
 import Industries from "../components/Industries";
 import About from "../components/About";
+import Digital from "../components/Digital";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Carousel />
       <Capabilities />
       <Industries />
+      <Digital />
       <Contact />
       <About />
     </>

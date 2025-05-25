@@ -4,16 +4,19 @@ const About = () => {
   return (
     <>
       <div className="bg-white pt-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto py-6 flex flex-col text-center justify-center items-center">
+        <div
+          data-aos="fade-down"
+          className="max-w-7xl mx-auto py-6 flex flex-col text-center justify-center items-center"
+        >
           <div>
-            <h2 className="text-3xl pb-4 sm:text-4xl lg:text-5xl font-bold text-black">
+            <h2 className="text-3xl pt-10 pb-4 sm:text-4xl lg:text-5xl font-bold text-black">
               About Us
             </h2>
           </div>
           <div className="text-base text-gray-800 max-w-md">
             <p>
-              Designing & Developing Stunning UI/UX Web and App for advance
-              upgrade of customer experience
+              Building high-impact digital experiences with world-class web and
+              app development solutions.
             </p>
           </div>
         </div>
@@ -22,36 +25,52 @@ const About = () => {
           <hr className="w-full max-w-7xl border-t border-gray-800" />
         </div>
 
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div
+          data-aos="zoom-in"
+          className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"
+        >
           <p className="text-black text-left text-sm sm:text-base leading-relaxed">
-            Three-Eyed is the website designing company based in Indore,
-            established in 2025 providing web services & solutions such as
-            website design, website development in Indore, Domain Registration,
-            web hosting, Android App Development, eCommerce web development,
-            Search Engine Optimization, etc. We have good experience in
-            developing different platform websites and we keep our eye on the
-            latest technologies to implement on the website for better
-            conversion and user experience. 
+            <strong>Three-Eyed Pvt. Ltd.</strong> is a fast-growing IT solutions
+            company based in Indore, established in 2025. We specialize in
+            delivering robust and scalable digital products, including custom
+            website design, full-stack web development, eCommerce platforms,
+            UI/UX design, mobile app development, cloud integration, and digital
+            marketing. At Three-Eyed, we combine creativity, cutting-edge
+            technology, and customer-first strategies to help businesses grow in
+            the digital landscape.
+            <br />
+            <br />
+            With a strong focus on quality, innovation, and customer
+            satisfaction, we have partnered with startups, SMEs, and enterprises
+            across India to launch meaningful and measurable web solutions.
+            Whether you're looking to revamp your brand’s online presence or
+            develop a product from scratch, we are your strategic technology
+            partner.
           </p>
         </div>
 
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start gap-6 lg:items-center py-6 px-4 sm:px-6 lg:px-8">
           <div>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black">
+            <h2
+              data-aos="fade-left"
+              className="text-xl sm:text-2xl lg:text-3xl font-bold text-black"
+            >
               Our Mission
             </h2>
           </div>
-          <div className="text-gray-800 text-sm sm:text-base leading-relaxed lg:w-2/3">
+          <div
+            data-aos="zoom-in"
+            className="text-gray-800 text-sm sm:text-base leading-relaxed lg:w-2/3"
+          >
             <p>
-              Our target is to earn global admiration as an IT Company, work for
-              building and maintaining long-lasting relationships with people by
-              giving excellent service. Our target at providing the highest
-              quality of services in every step of Client Relationship, from
-              initial contact to follow up support. We are having happy
-              customers across all over India for website design, website
-              development, and SEO. We make sure the client gets exactly what he
-              needs. Our developers take ideas from the client as per their
-              requirements and brainstorm them to provide a customized product.
+              Our mission at Three-Eyed is to empower businesses through
+              transformative digital solutions. We aim to become a globally
+              admired technology company by building long-term partnerships and
+              delivering measurable value to our clients. From initial
+              consultation to post-launch support, we ensure each client gets a
+              tailored solution that meets their goals and exceeds expectations.
+              Our agile teams are committed to driving innovation, performance,
+              and digital success.
             </p>
           </div>
         </div>
