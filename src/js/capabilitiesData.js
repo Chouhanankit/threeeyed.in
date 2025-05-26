@@ -94,7 +94,7 @@ const capabilities = [
   },
   {
     title: "UI/UX Design That Inspires Engagement and Conversion",
-    slug: "ui/ux-design",
+    slug: "ui-ux-design",
     intro:
       "We craft digital experiences that captivate users and drive results. Our UI/UX design process is rooted in user behavior, brand alignment, and conversion psychology.",
     definitionTitle: "What is UI/UX Design?",

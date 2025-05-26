@@ -62,7 +62,7 @@ const NavbarItems = [
         },
       ],
       "Other Services": [
-        { id: "2-9", text: "UI/UX Design", link: "/capabilities/ui/ux-design" },
+        { id: "2-9", text: "UI/UX Design", link: "/capabilities/ui-ux-design" },
 
         {
           id: "2-11",
@@ -281,7 +281,7 @@ const Navbar = () => {
       {/* Mobile Menu Icon */}
       <button
         onClick={toggleNavbar}
-        className="block md:hidden text-white"
+        className="block md:hidden text-white dark:text-white"
         aria-label={isNavbarOpen ? "Close menu" : "Open menu"}
       >
         {isNavbarOpen ? (

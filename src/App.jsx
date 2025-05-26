@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./screens/Home";
 import NotFound from "./screens/NotFound";
@@ -18,8 +18,12 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import About from "./components/About";
 import FounderPage from "./screens/FounderPage";
+import CookieBanner from "./components/CookieBanner";
+import PrivacyPolicy from "./screens/PrivacyPolicy";
+import TermsConditions from "./screens/TermsConditions";
 
 const App = () => {
+  const [showCookiePrefs, setShowCookiePrefs] = useState(false);
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -32,17 +36,8 @@ const App = () => {
       <Navbar />
       <ToastContainer
         position="top-center"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        className="toast-container-fullwidth"
+        toastClassName="w-[90vw] max-w-sm sm:w-auto !rounded-lg !shadow-md"
       />
-
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
@@ -56,8 +51,11 @@ const App = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/about/careers" element={<About />} />
         <Route path="/about/team" element={<FounderPage />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
       </Routes>
-      <Footer />
+      <CookieBanner forceShow={showCookiePrefs} />
+      <Footer onCookiePrefsClick={() => setShowCookiePrefs(true)} />
     </Router>
   );
 };

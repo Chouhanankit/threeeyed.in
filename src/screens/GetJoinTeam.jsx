@@ -15,7 +15,7 @@ const GetJoinTeam = () => {
               <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-black">
                 Join Our Tech Team
               </h1>
-              <p className="text-gray-700 text-base sm:text-lg md:text-xl py-4 lg:w-[35rem] w-[42rem] mx-auto lg:mx-0">
+              <p className="text-gray-700 text-base sm:text-lg md:text-xl py-4 lg:w-[35rem] p-2 mx-auto lg:mx-0">
                 Passionate about coding, design, or problem-solving? Be part of
                 our mission to build smarter digital experiences.
               </p>

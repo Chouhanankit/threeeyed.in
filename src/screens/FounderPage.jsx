@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const FounderPage = () => {
   return (
-    <div className="min-h-screen pt-25 lg:pt-0 sm:pt-0 md:pt-0 bg-white flex items-center justify-center p-6">
+    <div className="min-h-screen pt-25 lg:pt-0 sm:pt-0 md:pt-0 bg-white flex items-center justify-center p-2">
       <div className="bg-[#EA7900] rounded-2xl shadow-lg p-8 max-w-3xl w-full text-white">
         <div className="flex flex-col md:flex-row items-center md:items-start">
           {/* Profile Image */}
