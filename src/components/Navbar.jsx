@@ -207,162 +207,168 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black max-w-9xl fixed z-40 shadow top-0 w-full flex justify-between items-center md:h-24 h-18 max-w mx-auto sm:px-8 md:px-8 px-3 text-white">
-      {/* Logo */}
-      <Link to="/" onClick={handleMobileLinkClick}>
-        <img
-          src={threeeyedlogo}
-          className="md:h-18 sm:h-18 h-12"
-          alt="Three Eyed Logo"
-        />
-      </Link>
-
-      {/* Desktop Navigation */}
-      <div className="hidden md:flex max-w-9xl mx-auto space-x-8 relative w-full justify-end">
-        {NavbarItems.map((item) => (
-          <div
-            key={item.id}
-            className="relative group"
-            onMouseEnter={() => handleMouseEnter(item.id)}
-          >
-            <Link
-              to={item.link}
-              className="px-4 py-2 text-white flex items-center justify-between hover:text-[#EA7900] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:bg-[#EA7900] md:p-0 after:scale-x-0 after:origin-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-left"
-              aria-haspopup={!!item.dropdown}
-              aria-expanded={openDropdown === item.id}
-              onKeyDown={(e) => handleKeyDown(e, item.id)}
-              tabIndex={0}
-            >
-              {item.text}
-              {/* Optional down arrow icon */}
-            </Link>
-
-            {/* Full-screen dropdown */}
-            {item.dropdown && openDropdown === item.id && (
-              <div
-                className="fixed left-0 top-24 pb-12 w-full bg-white text-black z-40 shadow-lg"
-                onMouseEnter={() => handleMouseEnter(item.id)}
-                onMouseLeave={() => {
-                  setTimeout(() => {
-                    setOpenDropdown((prev) => (prev === item.id ? null : prev));
-                  }, 2000); // 2 seconds delay
-                }}
-              >
-                <div className="max-w-8xl mx-auto px-10 py-8 grid grid-cols-4 gap-8">
-                  {Object.entries(item.dropdown).map(
-                    ([category, links], idx) => (
-                      <div key={category || idx}>
-                        {category && (
-                          <h4 className="font-semibold mb-3">{category}</h4>
-                        )}
-                        <ul className="space-y-2 text-sm">
-                          {links.map((linkItem) => (
-                            <li key={linkItem.id}>
-                              <Link
-                                to={linkItem.link}
-                                className="hover:text-[#EA7900]"
-                                onClick={handleMobileLinkClick}
-                              >
-                                {linkItem.text}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )
-                  )}
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* Mobile Menu Icon */}
-      <button
-        onClick={toggleNavbar}
-        className="block md:hidden text-white dark:text-white"
-        aria-label={isNavbarOpen ? "Close menu" : "Open menu"}
-      >
-        {isNavbarOpen ? (
-          <AiOutlineClose size={24} />
-        ) : (
-          <AiOutlineMenu size={24} />
-        )}
-      </button>
-
-      {/* Mobile Menu */}
-      <ul
-        className={`fixed md:hidden top-0 w-[70%] h-full border-r border-gray-900 bg-[#000300] z-50 ease-in-out duration-500 ${
-          isNavbarOpen ? "left-0" : "-left-full"
-        }`}
-      >
+    <nav className="bg-black fixed z-40 shadow top-0 w-full md:h-24 h-20 mb-0  text-white ">
+      <div className="lg:max-w-screen-2xl max-w-screen-xl mx-auto py-4 flex justify-between items-center w-full sm:px-8 md:px-8 px-3">
+        {/* Logo */}
         <Link to="/" onClick={handleMobileLinkClick}>
-          <h1 className="text-2xl font-bold text-[#EA7900] m-4 cursor-pointer">
-            Three Eyed
-          </h1>
+          <img
+            src={threeeyedlogo}
+            className="lg:h-18 h-12 w-auto max-w-full object-contain"
+            alt="Three Eyed Logo"
+          />
         </Link>
 
-        {NavbarItems.map((item) => (
-          <div key={item.id}>
-            <Link to={item.link}>
-              <li
-                onClick={() =>
-                  setOpenDropdown((prev) => (prev === item.id ? null : item.id))
-                }
-                className="p-4 border-b  rounded-xl hover:bg-[#EA7900] hover:text-black duration-300 cursor-pointer border-gray-600 flex justify-between items-center"
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex max-w-9xl mx-auto space-x-8 relative w-full justify-end">
+          {NavbarItems.map((item) => (
+            <div
+              key={item.id}
+              className="relative group"
+              onMouseEnter={() => handleMouseEnter(item.id)}
+            >
+              <Link
+                to={item.link}
+                className="px-4 py-2 text-white flex items-center justify-between hover:text-[#EA7900] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:bg-[#EA7900] md:p-0 after:scale-x-0 after:origin-right after:transition-transform after:duration-300 group-hover:after:scale-x-100 group-hover:after:origin-left"
+                aria-haspopup={!!item.dropdown}
+                aria-expanded={openDropdown === item.id}
+                onKeyDown={(e) => handleKeyDown(e, item.id)}
                 tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    setOpenDropdown((prev) =>
-                      prev === item.id ? null : item.id
-                    );
-                  }
-                }}
               >
                 {item.text}
-                {item.dropdown && (
-                  <svg
-                    className={`h-4 w-4 transition-transform duration-300 ${
-                      openDropdown === item.id ? "rotate-180" : "rotate-0"
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                )}
-              </li>
-            </Link>
+                {/* Optional down arrow icon */}
+              </Link>
 
-            {/* Mobile Dropdown */}
-            {item.dropdown && openDropdown === item.id && (
-              <ul className="pl-6 bg-black">
-                {Object.values(item.dropdown)
-                  .flat()
-                  .map((sub) => (
-                    <li
-                      key={sub.id}
-                      className="py-2 text-sm text-white hover:text-[#EA7900]"
+              {/* Full-screen dropdown */}
+              {item.dropdown && openDropdown === item.id && (
+                <div
+                  className="fixed left-0 top-24 pb-12 w-full bg-white text-black z-40 shadow-lg"
+                  onMouseEnter={() => handleMouseEnter(item.id)}
+                  onMouseLeave={() => {
+                    setTimeout(() => {
+                      setOpenDropdown((prev) =>
+                        prev === item.id ? null : prev
+                      );
+                    }, 2000); // 2 seconds delay
+                  }}
+                >
+                  <div className="max-w-8xl mx-auto px-10 py-8 grid grid-cols-4 gap-8">
+                    {Object.entries(item.dropdown).map(
+                      ([category, links], idx) => (
+                        <div key={category || idx}>
+                          {category && (
+                            <h4 className="font-semibold mb-3">{category}</h4>
+                          )}
+                          <ul className="space-y-2 text-sm">
+                            {links.map((linkItem) => (
+                              <li key={linkItem.id}>
+                                <Link
+                                  to={linkItem.link}
+                                  className="hover:text-[#EA7900]"
+                                  onClick={handleMobileLinkClick}
+                                >
+                                  {linkItem.text}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Menu Icon */}
+        <button
+          onClick={toggleNavbar}
+          className="block md:hidden text-white dark:text-white"
+          aria-label={isNavbarOpen ? "Close menu" : "Open menu"}
+        >
+          {isNavbarOpen ? (
+            <AiOutlineClose size={24} />
+          ) : (
+            <AiOutlineMenu size={24} />
+          )}
+        </button>
+
+        {/* Mobile Menu */}
+        <ul
+          className={`fixed md:hidden top-0 left-0 h-full w-4/5 max-w-xs bg-black z-50 transition-transform duration-500 ${
+            isNavbarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <Link to="/" onClick={handleMobileLinkClick}>
+            <h1 className="text-2xl font-bold text-[#EA7900] m-4 cursor-pointer">
+              Three Eyed
+            </h1>
+          </Link>
+
+          {NavbarItems.map((item) => (
+            <div key={item.id}>
+              <Link to={item.link}>
+                <li
+                  onClick={() =>
+                    setOpenDropdown((prev) =>
+                      prev === item.id ? null : item.id
+                    )
+                  }
+                  className="p-4 border-b  rounded-xl hover:bg-[#EA7900] hover:text-black duration-300 cursor-pointer border-gray-600 flex justify-between items-center"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setOpenDropdown((prev) =>
+                        prev === item.id ? null : item.id
+                      );
+                    }
+                  }}
+                >
+                  {item.text}
+                  {item.dropdown && (
+                    <svg
+                      className={`h-4 w-4 transition-transform duration-300 ${
+                        openDropdown === item.id ? "rotate-180" : "rotate-0"
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
-                      <Link to={sub.link} onClick={handleMobileLinkClick}>
-                        {sub.text}
-                      </Link>
-                    </li>
-                  ))}
-              </ul>
-            )}
-          </div>
-        ))}
-      </ul>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  )}
+                </li>
+              </Link>
+
+              {/* Mobile Dropdown */}
+              {item.dropdown && openDropdown === item.id && (
+                <ul className="pl-6 bg-black">
+                  {Object.values(item.dropdown)
+                    .flat()
+                    .map((sub) => (
+                      <li
+                        key={sub.id}
+                        className="py-2 text-sm text-white hover:text-[#EA7900]"
+                      >
+                        <Link to={sub.link} onClick={handleMobileLinkClick}>
+                          {sub.text}
+                        </Link>
+                      </li>
+                    ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };

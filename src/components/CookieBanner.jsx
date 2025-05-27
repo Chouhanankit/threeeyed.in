@@ -24,7 +24,7 @@ const CookieBanner = ({ forceShow }) => {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 flex flex-col md:flex-row justify-between items-center z-50">
+    <div className="fixed bottom-0 text-xs lg:text-xl left-0 right-0 bg-gray-900 text-white p-4 flex flex-col md:flex-row justify-between items-center z-50">
       <p className="mb-2 md:mb-0">
         We use cookies to improve your experience.{" "}
         <a href="/privacy" className="underline">

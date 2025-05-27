@@ -26,7 +26,7 @@ const FounderPage = () => {
             </p>
 
             {/* Socials or Contact */}
-            <div className="mt-6 flex space-x-4">
+            <div className="mt-6 text-xs lg:text-lg flex space-x-4">
               <Link
                 to={"/getcontact"}
                 className="bg-white text-[#EA7900] font-semibold px-4 py-2 rounded-xl shadow hover:bg-gray-100 transition"

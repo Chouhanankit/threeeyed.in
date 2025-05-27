@@ -31,16 +31,13 @@ const IndustriesPage = () => {
             >
               <h1
                 data-aos-duration="3000"
-                className="text-2xl md:text-6xl font-bold mb-3 md:mb-6"
+                className="text-xl lg:text-2xl md:text-6xl font-bold mb-3 md:mb-6"
               >
                 Industries We Serve
               </h1>
               <p className="text-[12px] w-[60%] md:w-full md:text-base">
                 Three-Eyed Pvt. Ltd. is an Indore-based IT company specializing
-                in delivering cutting-edge technology solutions. Our expertise
-                spans 13 diverse industries, including banking, insurance,
-                telecommunications, media, entertainment, distribution, retail,
-                and many more.
+                in delivering cutting-edge technology solutions.
               </p>
             </div>
           </div>

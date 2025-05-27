@@ -7,7 +7,7 @@ const AboutPage = () => {
       {/* Hero Section */}
       <section className="bg-[#EA7900] lg:pt-40 pt-10 text-white py-20 px-6 sm:px-12 lg:px-24">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
+          <h1 className="text-3xl lg:pt-5 pt-12 md:pt-24 sm:text-5xl font-extrabold mb-4">
             About Three-Eyed Pvt. Ltd.
           </h1>
           <p className="text-lg sm:text-xl font-light max-w-3xl mx-auto">

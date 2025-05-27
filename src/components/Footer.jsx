@@ -110,7 +110,7 @@ const Footer = ({ onCookiePrefsClick }) => {
                   <li className="mb-2">
                     <button
                       onClick={onCookiePrefsClick}
-                      className="hover:underline dark:text-white hover:text-gray-400"
+                      className="hover:underline dark:text-white text-start hover:text-gray-400"
                     >
                       Cookie Preferences
                     </button>

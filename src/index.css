@@ -10,10 +10,15 @@
   font-optical-sizing: auto;
   font-weight: weight;
   font-style: normal;
+  /* border: 2px solid red; */
 }
 
 html {
   scroll-behavior: smooth;
+}
+html,
+body {
+  overflow-x: hidden;
 }
 
 .toast-container {
