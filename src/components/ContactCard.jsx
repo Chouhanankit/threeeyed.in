@@ -29,19 +29,20 @@ const ContactCard = () => {
     }));
   };
 
-  const URL = "https://threeeyed-backend.onrender.com/api/user";
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`${URL}/register/mail`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `https://threeeyedbackend.onrender.com/api/user/register/mail`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const result = await res.json();
 

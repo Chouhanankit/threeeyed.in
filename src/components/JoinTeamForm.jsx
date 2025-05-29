@@ -44,8 +44,6 @@ export default function JoinTeamForm() {
     setSkill("");
   };
 
-  const URL = "https://threeeyed-backend.onrender.com/api/user";
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -54,16 +52,19 @@ export default function JoinTeamForm() {
     formDataToSend.append("lastName", formData.lastName);
     formDataToSend.append("email", formData.email);
     formDataToSend.append("phone", formData.phone);
-    formDataToSend.append("resume", formData.resume); // 👈 PDF file
+    formDataToSend.append("resume", formData.resume);
     formDataToSend.append("position", selectedPosition);
     formDataToSend.append("skills", skillsList.join(", "));
     formDataToSend.append("employment_status", employmentStatus);
 
     try {
-      const res = await fetch(`${URL}/join/team`, {
-        method: "POST",
-        body: formDataToSend,
-      });
+      const res = await fetch(
+        `https://threeeyedbackend.onrender.com/api/user/join/team`,
+        {
+          method: "POST",
+          body: formDataToSend,
+        }
+      );
 
       if (res.ok) {
         toast.success("Application submitted successfully!");
