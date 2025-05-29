@@ -44,33 +44,37 @@ export default function JoinTeamForm() {
     setSkill("");
   };
 
-  const handleSubmit = (e) => {
+  const URL = "https://threeeyed-backend.onrender.com/api/user";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const serviceID = "service_qmwo4dt";
-    const templateID = "template_ybl8awq";
-    const userID = "wqNbAyet_H9MoZHJj";
+    const formDataToSend = new FormData();
+    formDataToSend.append("firstName", formData.firstName);
+    formDataToSend.append("lastName", formData.lastName);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("phone", formData.phone);
+    formDataToSend.append("resume", formData.resume); // 👈 PDF file
+    formDataToSend.append("position", selectedPosition);
+    formDataToSend.append("skills", skillsList.join(", "));
+    formDataToSend.append("employment_status", employmentStatus);
 
-    const templateParams = {
-      from_name: `${formData.firstName} ${formData.lastName}`,
-      email: formData.email,
-      phone: formData.phone,
-      position: selectedPosition,
-      skills: skillsList.join(", "),
-      employment_status: employmentStatus,
-      resume_url: formData.resumeUrl || "Not provided",
-    };
+    try {
+      const res = await fetch(`${URL}/join/team`, {
+        method: "POST",
+        body: formDataToSend,
+      });
 
-    emailjs.send(serviceID, templateID, templateParams, userID).then(
-      (response) => {
+      if (res.ok) {
         toast.success("Application submitted successfully!");
         resetForm();
-      },
-      (error) => {
-        toast.error("Failed to send application. Please try again later.");
-        console.error("EmailJS Error:", error);
+      } else {
+        toast.error("Failed to submit. Please try again.");
       }
-    );
+    } catch (err) {
+      console.error(err);
+      toast.error("An error occurred while submitting the form.");
+    }
   };
 
   return (
@@ -238,18 +242,48 @@ export default function JoinTeamForm() {
             </div>
           </div>
 
-          {/* Resume URL Only */}
+          {/* Resume  Only */}
           <div className="mt-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Resume URL
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Upload Resume (PDF only)
             </label>
+
+            <div
+              onDragOver={(e) => e.preventDefault()}
+              onDrop={(e) => {
+                e.preventDefault();
+                const file = e.dataTransfer.files[0];
+                if (file && file.type === "application/pdf") {
+                  setFormData({ ...formData, resume: file });
+                } else {
+                  toast.error("Please upload a valid PDF file.");
+                }
+              }}
+              onClick={() => document.getElementById("resumeInput").click()}
+              className="w-full flex flex-col items-center justify-center border-2 border-dashed border-[#EA7900] rounded-md p-6 text-center cursor-pointer hover:bg-orange-50 transition"
+            >
+              <p className="text-sm text-gray-600">
+                Drag & Drop your resume here
+              </p>
+              <p className="text-xs text-gray-500">
+                or click to browse (PDF only)
+              </p>
+              {formData.resume && (
+                <p className="mt-2 text-green-700 font-medium">
+                  Selected: {formData.resume.name}
+                </p>
+              )}
+            </div>
+
             <input
-              type="url"
-              name="resumeUrl"
-              value={formData.resumeUrl}
-              onChange={handleChange}
-              placeholder="https://your-resume-link.com"
-              className="mt-1 w-full border border-[#EA7900] rounded-0 p-2"
+              type="file"
+              id="resumeInput"
+              accept="application/pdf"
+              name="resume"
+              className="hidden"
+              onChange={(e) =>
+                setFormData({ ...formData, resume: e.target.files[0] })
+              }
               required
             />
           </div>

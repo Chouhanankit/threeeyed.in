@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRef } from "react";
-import emailjs from "@emailjs/browser";
+
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -29,36 +29,38 @@ const ContactCard = () => {
     }));
   };
 
-  const service_id = "service_qmwo4dt";
-  const template_id = "template_en21amg";
-  const user_id = "wqNbAyet_H9MoZHJj";
+  const URL = "https://threeeyed-backend.onrender.com/api/user";
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .send(
-        service_id, // replace with your EmailJS service ID
-        template_id, // replace with your EmailJS template ID
-        formData,
-        user_id // replace with your EmailJS user/public key
-      )
-      .then(
-        (result) => {
-          toast.success("Message Sent Successfully!");
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            subject: "",
-            message: "",
-          });
+    try {
+      const res = await fetch(`${URL}/register/mail`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        (error) => {
-          toast.error("An error occurred. Please try again.");
-          console.error(error.text);
-        }
-      );
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (res.status === 200) {
+        toast.success(result.message);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        toast.error(result.message || "Something went wrong");
+      }
+    } catch (error) {
+      toast.error("Network or server error");
+      console.error("Submit Error:", error);
+    }
   };
 
   const contactDetails = [

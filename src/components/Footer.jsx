@@ -28,7 +28,7 @@ const Footer = ({ onCookiePrefsClick }) => {
 
             <div className="w-auto grid grid-cols-2 gap-8 sm:gap-34 sm:grid-cols-3">
               <div>
-                <ul className="mb-6 text-sm text-gray-900  dark:text-white">
+                <ul className="mb-6 text-sm text-white  dark:text-white">
                   <li className="mb-2">
                     <Link
                       to={"/"}
