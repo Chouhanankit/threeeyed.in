@@ -7,6 +7,7 @@ export default function JoinTeamForm() {
   const [selectedPosition, setSelectedPosition] = useState("");
   const [skill, setSkill] = useState("");
   const [skillsList, setSkillsList] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -46,6 +47,7 @@ export default function JoinTeamForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const formDataToSend = new FormData();
     formDataToSend.append("firstName", formData.firstName);
@@ -57,25 +59,38 @@ export default function JoinTeamForm() {
     formDataToSend.append("skills", skillsList.join(", "));
     formDataToSend.append("employment_status", employmentStatus);
 
-    try {
-      const res = await fetch(
-        `https://threeeyedbackend.onrender.com/api/user/join/team`,
-        {
-          method: "POST",
-          body: formDataToSend,
-        }
-      );
-
-      if (res.ok) {
-        toast.success("Application submitted successfully!");
-        resetForm();
-      } else {
-        toast.error("Failed to submit. Please try again.");
+    const request = fetch(
+      `https://threeeyedbackend.onrender.com/api/user/join/team`,
+      {
+        method: "POST",
+        body: formDataToSend,
       }
-    } catch (err) {
-      console.error(err);
-      toast.error("An error occurred while submitting the form.");
-    }
+    ).then(async (res) => {
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error.message || "Submission failed");
+      }
+      return res.json();
+    });
+
+    toast
+      .promise(request, {
+        pending: "Submitting your application...",
+        success: {
+          render({ data }) {
+            resetForm();
+            return data.message || "Application submitted successfully!";
+          },
+        },
+        error: {
+          render({ data }) {
+            return data.message || "Submission failed!";
+          },
+        },
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -183,7 +198,7 @@ export default function JoinTeamForm() {
                 value={skill}
                 onChange={(e) => setSkill(e.target.value)}
                 placeholder="e.g. React, Node.js"
-                className="flex-1 border border-gray-300 rounded-0 p-2"
+                className="w-full border border-gray-300 rounded-0 p-2"
               />
               <button
                 type="button"
@@ -293,9 +308,40 @@ export default function JoinTeamForm() {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-[#EA7900] hover:bg-blue-400 text-white font-semibold py-2 px-6 rounded-0"
+              disabled={loading}
+              className={`font-semibold py-2 px-6 rounded-0 w-full transition ${
+                loading
+                  ? "bg-orange-300 cursor-not-allowed"
+                  : "bg-[#EA7900] hover:bg-orange-600 text-white"
+              }`}
             >
-              Submit
+              {loading ? (
+                <span className="flex justify-center items-center gap-2">
+                  <svg
+                    className="animate-spin h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"
+                    ></path>
+                  </svg>
+                  Submitting...
+                </span>
+              ) : (
+                "Submit Application"
+              )}
             </button>
           </div>
         </form>

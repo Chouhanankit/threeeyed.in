@@ -73,10 +73,10 @@ const Carousel = () => {
 
           {/* Overlay Content */}
           <div className="relative z-10 flex flex-col justify-end items-end h-full w-full px-2 pb-10 md:pb-40 text-end mx-auto max-w-screen-xl">
-            <h1 className="text-xs md:text-3xl font-bold md:mb-2 w-[65%] md:w-[40%]">
+            <h1 className="text-xs text-white dark:text-white md:text-3xl font-bold md:mb-2 w-[65%] md:w-[40%]">
               {item.title}
             </h1>
-            <p className="text-xs md:text-xs md:w-full w-65 text-gray-200 md:py-3 py-2">
+            <p className="text-xs md:text-xs md:w-full w-65 dark:text-gray-200 md:py-3 py-2">
               {item.text}
             </p>
             <Link to={"/"}>

@@ -11,6 +11,9 @@ import "aos/dist/aos.css";
 import { toast } from "react-toastify";
 
 const ContactCard = () => {
+  const [loading, setLoading] = useState(false);
+  const form = useRef();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,8 +21,6 @@ const ContactCard = () => {
     subject: "",
     message: "",
   });
-
-  const form = useRef();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,37 +32,48 @@ const ContactCard = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    try {
-      const res = await fetch(
-        `https://threeeyedbackend.onrender.com/api/user/register/mail`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      const result = await res.json();
-
-      if (res.status === 200) {
-        toast.success(result.message);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "",
-          message: "",
-        });
-      } else {
-        toast.error(result.message || "Something went wrong");
+    const requestPromise = fetch(
+      `https://threeeyedbackend.onrender.com/api/user/register/mail`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       }
-    } catch (error) {
-      toast.error("Network or server error");
-      console.error("Submit Error:", error);
-    }
+    ).then(async (res) => {
+      const result = await res.json();
+      if (res.status !== 200)
+        throw new Error(result.message || "Something went wrong");
+      return result;
+    });
+
+    toast
+      .promise(requestPromise, {
+        pending: "Submitting your enquiry...",
+        success: {
+          render({ data }) {
+            setFormData({
+              name: "",
+              email: "",
+              phone: "",
+              subject: "",
+              message: "",
+            });
+            return data.message || "Enquiry sent successfully!";
+          },
+        },
+        error: {
+          render({ data }) {
+            return data.message || "Submission failed!";
+          },
+        },
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   const contactDetails = [
@@ -203,9 +215,40 @@ const ContactCard = () => {
 
             <button
               type="submit"
-              className="w-full bg-[#EA7900] text-white py-2 rounded-md font-semibold hover:bg-orange-600 transition"
+              disabled={loading}
+              className={`w-full py-2 rounded-md font-semibold transition ${
+                loading
+                  ? "bg-orange-300 cursor-not-allowed"
+                  : "bg-[#EA7900] hover:bg-orange-600 text-white"
+              }`}
             >
-              Submit Enquiry
+              {loading ? (
+                <span className="flex items-center justify-center gap-2">
+                  <svg
+                    className="animate-spin h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"
+                    ></path>
+                  </svg>
+                  Sending...
+                </span>
+              ) : (
+                "Submit Enquiry"
+              )}
             </button>
           </form>
         </div>

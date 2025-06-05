@@ -21,7 +21,7 @@ import FounderPage from "./screens/FounderPage";
 import CookieBanner from "./components/CookieBanner";
 import PrivacyPolicy from "./screens/PrivacyPolicy";
 import TermsConditions from "./screens/TermsConditions";
-
+import WhatsAppChat from "./components/WhatsAppChat";
 const App = () => {
   const [showCookiePrefs, setShowCookiePrefs] = useState(false);
   useEffect(() => {
@@ -54,6 +54,7 @@ const App = () => {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
       </Routes>
+      <WhatsAppChat />
       <CookieBanner forceShow={showCookiePrefs} />
       <Footer onCookiePrefsClick={() => setShowCookiePrefs(true)} />
     </Router>
