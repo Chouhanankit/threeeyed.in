@@ -94,8 +94,8 @@ export default function JoinTeamForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center text-black p-4">
-      <div className="bg-white shadow-md w-full max-w-3xl lg:p-12 p-8 pt-8">
+    <div className="min-h-screen flex items-center justify-center text-black p-2 py-4">
+      <div className="bg-white shadow-md w-full rounded-xl max-w-3xl lg:p-12 p-8 pt-8">
         <div className="text-center mb-6">
           <p className="text-xs text-[#EA7900]">
             It will take about 3-5 working days for us to reply to you.

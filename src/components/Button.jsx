@@ -14,7 +14,7 @@ const Button = () => {
       <Link to={"/getcontact"}>
         <h1
           onClick={handleClick}
-          className={`group relative inline-flex items-center justify-center w-36 h-10 md:w-48 md:h-12 bg-transparent border border-white rounded-full cursor-pointer outline-none overflow-hidden ${
+          className={`group relative inline-flex items-center justify-center w-36 h-10 md:w-48 md:h-12 bg-transparent border border-white rounded-full cursor-pointer outline-none overflow-hidden active:scale-95 transition-transform duration-100 ${
             clicked ? "clicked" : ""
           }`}
           style={{ touchAction: "manipulation" }}
@@ -22,7 +22,7 @@ const Button = () => {
           {/* Animated Circle */}
           <span
             className={`circle absolute left-0 w-12 h-12 bg-[#EA7900] rounded-full transition-all duration-[450ms] ease-[cubic-bezier(0.65,0,0.076,1)] z-0 ${
-              clicked ? "w-full" : "group-hover:w-full"
+              clicked ? "w-full" : "group-hover:w-full group-active:w-full"
             }`}
           ></span>
 

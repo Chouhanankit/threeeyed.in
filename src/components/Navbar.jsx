@@ -158,12 +158,12 @@ const NavbarItems = [
         {
           id: "5-3",
           text: "Join Us",
-          link: "/getcontact",
+          link: "/jointeam",
         },
         {
           id: "5-4",
           text: "Get Touch",
-          link: "/jointeam",
+          link: "/getcontact",
         },
       ],
       About: [

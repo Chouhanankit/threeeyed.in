@@ -211,7 +211,7 @@ const Footer = ({ onCookiePrefsClick }) => {
             </div>
           </div>
 
-          <hr className="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
+          <hr className="my-4 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
 
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className="sm:text-[0.8rem] text-[8px] text-gray-500 dark:text-gray-400 ">
