@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const GetCapaComp = ({ section, capabilities }) => {
   const sections = section ? [section] : capabilities;
@@ -46,12 +47,12 @@ const GetCapaComp = ({ section, capabilities }) => {
         <p className="text-gray-700 mb-8">{section.whyText}</p>
 
         <div className="text-center">
-          <a
-            href={section.ctaLink}
-            className="inline-block border-2 border-blue-500 bg-amber-400 text-white text-lg font-medium py-3 px-6 rounded-0 hover:bg-amber-700 transition"
+          <Link
+            to={section.ctaLink}
+            className="inline-block rounded-4xl bg-[#EA7900] text-white text-lg font-medium py-3 px-6 rounded-0 hover:bg-amber-800 transition"
           >
             {section.ctaText}
-          </a>
+          </Link>
         </div>
       </div>
     </section>
