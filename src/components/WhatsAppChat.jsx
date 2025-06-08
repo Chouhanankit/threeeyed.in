@@ -2,7 +2,7 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsAppChat() {
-  const phoneNumber = "919617874140";
+  const phoneNumber = "916260718771";
   const message = encodeURIComponent(
     "Hello Three-Eyed Pvt. Ltd, I have an enquiry and would like to know more about your services."
   );
