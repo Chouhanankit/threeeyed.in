@@ -81,7 +81,7 @@ const ContactCard = () => {
       icon: <FaPhoneAlt className="text-[#EA7900] w-5 h-5" />,
       title: "Phone",
       value: (
-        <a href="tel:+919617874140" className="text-[#EA7900] hover:underline">
+        <a href="tel:+916260718771" className="text-[#EA7900] hover:underline">
           +91 6260718771
         </a>
       ),
