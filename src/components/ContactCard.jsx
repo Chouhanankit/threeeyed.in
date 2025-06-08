@@ -82,7 +82,7 @@ const ContactCard = () => {
       title: "Phone",
       value: (
         <a href="tel:+919617874140" className="text-[#EA7900] hover:underline">
-          +91 9617874140
+          +91 6260718771
         </a>
       ),
     },
