@@ -5,17 +5,24 @@ const LoaderWrapper = ({ children }) => {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
   const [animateOut, setAnimateOut] = useState(false);
+  const [animationStart, setAnimationStart] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     setAnimateOut(false);
+    setAnimationStart(false);
 
-    const timer = setTimeout(() => {
+    const timer1 = setTimeout(() => {
       setAnimateOut(true);
-      setTimeout(() => setLoading(false), 700);
+      const timer2 = setTimeout(() => {
+        setLoading(false);
+        setAnimationStart(true); 
+      }, 700);
+
+      return () => clearTimeout(timer2);
     }, 700);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer1);
   }, [location.pathname]);
 
   return (
@@ -47,7 +54,11 @@ const LoaderWrapper = ({ children }) => {
       )}
 
       <div className={loading ? "overflow-hidden h-screen" : ""}>
-        {children}
+        {React.Children.map(children, (child) =>
+          React.isValidElement(child)
+            ? React.cloneElement(child, { animationStart })
+            : child
+        )}
       </div>
     </>
   );
