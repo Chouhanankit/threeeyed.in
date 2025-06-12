@@ -64,31 +64,36 @@ const industries = [
 const GetIndustries = () => {
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 pb-10">
-        {industries.map((industry, index) => {
-          const Icon = industry.icon;
-          return (
-            <div
-              data-aos="zoom-in"
-              key={index}
-              className="hover:bg-[#ffa340]  rounded-0 shadow-md hover:shadow-xl transition-all duration-500 group"
-            >
-              <img
-                src={industry.image}
-                alt={industry.title}
-                className="w-full h-48 object-cover rounded-0 grayscale group-hover:grayscale-0 transition"
-              />
-              <div className="p-5 flex flex-col items-start">
-                <div className="bg-gray-100 p-2 rounded-full mb-4">
-                  <Icon className="w-6 h-6 text-[#4f46e5]" strokeWidth={1.5} />
+      <div className="overflow-x-auto sm:overflow-visible">
+        <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 min-w-max sm:min-w-0 pb-4">
+          {industries.map((industry, index) => {
+            const Icon = industry.icon;
+            return (
+              <div
+                data-aos="zoom-in"
+                key={index}
+                className="min-w-[250px] hover:bg-[#ffa340] rounded-0 shadow-md hover:shadow-xl transition-all duration-500 group"
+              >
+                <img
+                  src={industry.image}
+                  alt={industry.title}
+                  className="w-full h-48 object-cover rounded-0 grayscale group-hover:grayscale-0 transition"
+                />
+                <div className="p-5 flex flex-col items-start">
+                  <div className="bg-gray-100 p-2 rounded-full mb-4">
+                    <Icon
+                      className="w-6 h-6 text-[#4f46e5]"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-800">
+                    {industry.title}
+                  </h3>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {industry.title}
-                </h3>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </>
   );
