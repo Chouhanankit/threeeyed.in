@@ -35,8 +35,8 @@ const App = () => {
 
   return (
     <Router>
+      <Navbar />
       <LoaderWrapper redirectTo="/">
-        <Navbar />
         <ToastContainer
           position="top-center"
           toastClassName="w-[90vw] max-w-sm sm:w-auto !rounded-lg !shadow-md"
