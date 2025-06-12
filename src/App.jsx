@@ -22,6 +22,8 @@ import CookieBanner from "./components/CookieBanner";
 import PrivacyPolicy from "./screens/PrivacyPolicy";
 import TermsConditions from "./screens/TermsConditions";
 import WhatsAppChat from "./components/WhatsAppChat";
+import LoaderWrapper from "./components/LoaderWrapper";
+
 const App = () => {
   const [showCookiePrefs, setShowCookiePrefs] = useState(false);
   useEffect(() => {
@@ -33,30 +35,32 @@ const App = () => {
 
   return (
     <Router>
-      <Navbar />
-      <ToastContainer
-        position="top-center"
-        toastClassName="w-[90vw] max-w-sm sm:w-auto !rounded-lg !shadow-md"
-      />
-      <Routes>
-        <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/getcontact" element={<GetContact />} />
-        <Route path="/jointeam" element={<GetJoinTeam />} />
-        <Route path="/getcapabilities" element={<GetCapabilities />} />
-        <Route path="/" element={<CapabilitiesList />} />
-        <Route path="/capabilities/:slug" element={<CapabilityPage />} />
-        <Route path="/industries" element={<IndustriesPage />} />
-        <Route path="/marketing" element={<MarketingPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/about/careers" element={<About />} />
-        <Route path="/about/team" element={<FounderPage />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/terms-conditions" element={<TermsConditions />} />
-      </Routes>
-      <WhatsAppChat />
-      <CookieBanner forceShow={showCookiePrefs} />
-      <Footer onCookiePrefsClick={() => setShowCookiePrefs(true)} />
+      <LoaderWrapper redirectTo="/">
+        <Navbar />
+        <ToastContainer
+          position="top-center"
+          toastClassName="w-[90vw] max-w-sm sm:w-auto !rounded-lg !shadow-md"
+        />
+        <Routes>
+          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/getcontact" element={<GetContact />} />
+          <Route path="/jointeam" element={<GetJoinTeam />} />
+          <Route path="/getcapabilities" element={<GetCapabilities />} />
+          <Route path="/" element={<CapabilitiesList />} />
+          <Route path="/capabilities/:slug" element={<CapabilityPage />} />
+          <Route path="/industries" element={<IndustriesPage />} />
+          <Route path="/marketing" element={<MarketingPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/about/careers" element={<About />} />
+          <Route path="/about/team" element={<FounderPage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+        </Routes>
+        <WhatsAppChat />
+        <CookieBanner forceShow={showCookiePrefs} />
+        <Footer onCookiePrefsClick={() => setShowCookiePrefs(true)} />
+      </LoaderWrapper>
     </Router>
   );
 };
