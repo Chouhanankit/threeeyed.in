@@ -26,6 +26,14 @@ body {
   max-width: 400px;
 }
 
+/* global.css or Tailwind's global layer */
+.scroll-drag {
+  cursor: grab;
+}
+.scroll-drag:active {
+  cursor: grabbing;
+}
+
 @media (min-width: 640px) {
   .toast-container {
     width: auto;

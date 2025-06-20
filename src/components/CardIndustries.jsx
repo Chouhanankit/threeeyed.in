@@ -64,8 +64,37 @@ const industries = [
 
 const CardIndustries = ({ scrollRef }) => {
   const extendedIndustries = [...industries, ...industries];
+
+ useEffect(() => {
+  const container = scrollRef.current;
+  const scrollAmount = 1;
+  const scrollDelay = 20;
+  const isPaused = { current: false };
+
+  const autoScroll = () => {
+    if (!container || isPaused.current) return;
+    container.scrollLeft += scrollAmount;
+    const midpoint = container.scrollWidth / 2;
+    if (container.scrollLeft >= midpoint) container.scrollLeft = 0;
+  };
+
+  const interval = setInterval(autoScroll, scrollDelay);
+  return () => clearInterval(interval);
+}, []);
+
   return (
-    <div ref={scrollRef} className="overflow-x-auto scroll-smooth">
+    <div
+      ref={scrollRef}
+      className="
+    flex sm:grid
+    sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
+    gap-6
+    overflow-x-auto sm:overflow-x-hidden
+    scroll-smooth snap-x snap-mandatory
+    px-2 pb-10
+    scrollbar-hide
+  "
+    >
       <div
         className="flex gap-[1px] min-w-max"
         style={{ WebkitOverflowScrolling: "touch" }}

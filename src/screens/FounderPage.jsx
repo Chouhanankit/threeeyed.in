@@ -22,7 +22,7 @@ const FounderPage = ({ animationStart = true }) => {
       {/* Hero Section */}
       <section className="flex flex-col items-center text-center py-20 px-4">
         <motion.img
-          src="https://ik.imagekit.io/mcyibc35n/ChatGPT%20Image%20May%2025,%202025,%2004_02_20%20PM%20(1)%20(1).png"
+          src="https://ik.imagekit.io/mcyibc35n/ANKITCHOUHAN_keONmmqvq?updatedAt=1750419725774"
           alt="Ankit Chouhan"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={animationStart ? { scale: 1, opacity: 1 } : {}}
@@ -44,7 +44,7 @@ const FounderPage = ({ animationStart = true }) => {
           animate={animationStart ? { y: 0, opacity: 1 } : {}}
           transition={{ delay: 0.4, duration: 2 }}
         >
-          Owner & Co-founder – Three-Eyed Pvt. Ltd.
+          Founder – Three-Eyed Pvt. Ltd.
         </motion.h2>
 
         <motion.p

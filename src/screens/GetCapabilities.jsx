@@ -91,7 +91,7 @@ const GetCapabilities = () => {
                   data-aos-duration="3000"
                   className="text-2xl md:text-7xl font-bold mb-3 md:mb-6"
                 >
-                  Our Capabilities
+                  Our Services
                 </h1>
                 <p className="text-[12px] w-[60%] md:w-full md:text-base">
                   Our portfolio of offerings spans competencies, specialisms,

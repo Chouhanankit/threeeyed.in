@@ -28,7 +28,7 @@ const NavbarItems = [
   },
   {
     id: 2,
-    text: "CAPABILITIES",
+    text: "SERVICES",
     link: "/getcapabilities",
     dropdown: {
       "Web Development": [
@@ -351,18 +351,28 @@ const Navbar = () => {
               {/* Mobile Dropdown */}
               {item.dropdown && openDropdown === item.id && (
                 <ul className="pl-6 bg-black">
-                  {Object.values(item.dropdown)
-                    .flat()
-                    .map((sub) => (
-                      <li
-                        key={sub.id}
-                        className="py-2 text-sm text-white hover:text-[#EA7900]"
-                      >
-                        <Link to={sub.link} onClick={handleMobileLinkClick}>
-                          {sub.text}
-                        </Link>
-                      </li>
-                    ))}
+                  {item.dropdown && openDropdown === item.id && (
+                    <ul className="pl-6 bg-black">
+                      {Object.values(item.dropdown)
+                        .flat()
+                        .map((sub) => (
+                          <li
+                            key={sub.id}
+                            className="py-2 text-sm text-white hover:text-[#EA7900]"
+                          >
+                            <Link
+                              to={sub.link}
+                              onClick={() => {
+                                handleMobileLinkClick(); // closes menu
+                                setOpenDropdown(null); // closes dropdown
+                              }}
+                            >
+                              {sub.text}
+                            </Link>
+                          </li>
+                        ))}
+                    </ul>
+                  )}
                 </ul>
               )}
             </div>

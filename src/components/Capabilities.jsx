@@ -12,7 +12,7 @@ const Capabilities = () => {
               data-aos="fade-right"
               className="text-2xl sm:text-4xl lg:text-5xl text-black font-bold"
             >
-              Capabilities
+              Our Services
             </h1>
             <p
               data-aos="fade-left"
