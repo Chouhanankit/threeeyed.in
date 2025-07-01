@@ -16,7 +16,7 @@ import bankingImg from "../assets/bankingsmall.jpg";
 import communicationImg from "../assets/communicationssmall.jpg";
 import healthcareImg from "../assets/healthcaresmall.jpg";
 import mediaImg from "../assets/mediasmall.jpg";
-import servicesImg from "../assets/services.png";
+import servicesImg from "../assets/serv.jpg";
 import manufacturingImg from "../assets/manufa.jpg";
 
 const industries = [

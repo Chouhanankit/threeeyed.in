@@ -1,142 +1,91 @@
-import React, { useEffect, useState } from "react";
-import ReactPlayer from "react-player";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
-import Button from "./Button";
-import carouselItems from "../js/carouselItems";
 
-const Carousel = () => {
+const slides = [
+  {
+    heading: "Crafting Digital Excellence",
+    subtext:
+      "At Three-Eyed Pvt. Ltd., we build next-gen websites and intelligent marketing strategies that drive real business growth.",
+  },
+  {
+    heading: "Innovative IT & Marketing Solutions",
+    subtext:
+      "From design to development and promotion, our team delivers data-driven strategies tailored to your brand.",
+  },
+  {
+    heading: "Your Vision, Our Expertise",
+    subtext:
+      "Partner with us to unlock digital potential through creativity, technology, and performance-driven campaigns.",
+  },
+];
+
+const HeroCarousel = () => {
   const [current, setCurrent] = useState(0);
-  const item = carouselItems[current];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev === carouselItems.length - 1 ? 0 : prev + 1));
-    }, 5000);
-    return () => clearInterval(interval);
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 7000);
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <>
-      <div className="relative w-full h-screen overflow-hidden flex items-center justify-center">
-        {/* Left diagonal section - 60% */}
-        <div className="absolute md:top-0 top-0 md:left-0 md:w-[100%]  h-full bg-white clip-left z-20 flex justify-center items-center mx-auto max-w-screen-xl">
-          {/* Text Half */}
-          <div
-            data-aos="fade-up"
-            className="absolute text-black w-[90%] left-4 md:left-24 top-32 md:w-1/2 md:top-40 p-2 md:p-0 "
+    <section className="relative px-6 bg-noise md:px-12 lg:px-24 bg-[#171717] text-white overflow-hidden flex items-center justify-start h-[88vh]">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-[#00ffc3]/10 blur-[150px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0" />
+
+      {/* Main Content */}
+      <div className="relative z-10 text-left max-w-6xl w-full flex flex-col items-start justify-center space-y-6 px-2">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -40 }}
+            transition={{ duration: 0.7 }}
+            className="w-full"
           >
-            <h1
-              data-aos-duration="3000"
-              className="text-2xl md:text-5xl font-bold mb-3 md:mb-6"
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-snug text-white uppercase break-words w-full max-w-full mb-4">
+              <span className="text-[#EA7900] inline-block">
+                <Typewriter
+                  words={[slides[current].heading]}
+                  loop={1}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
+            </h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-gray-300 py-6 text-base md:text-lg lg:text-xl max-w-2xl"
             >
-              Scale at Speed
-            </h1>
-            <p className="text-[12px] w-[60%] md:w-full md:text-base">
-              Our promise to help enterprises across industries transform at
-              speed and bring agility, resilience, and efficiency to their
-              businesses.
-            </p>
-          </div>
-        </div>
-
-        {/* Right diagonal section - 40% */}
-        <div className="relative w-full h-screen z-0 overflow-hidden">
-          {/* Video Background */}
-          <div className="absolute inset-0 z-0">
-            <ReactPlayer
-              url={item.videoUrl}
-              playing
-              loop
-              muted
-              controls={false}
-              playsinline
-              width="100%"
-              height="100%"
-              style={{ objectFit: "cover" }}
-              config={{
-                file: {
-                  attributes: {
-                    playsInline: true,
-                    muted: true,
-                    autoPlay: true,
-                    preload: "auto",
-                    style: {
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    },
-                  },
-                },
-              }}
-            />
-          </div>
-
-          {/* Overlay Content */}
-          <div className="relative z-10 flex flex-col justify-end items-end h-full w-full px-2 pb-10 md:pb-40 text-end mx-auto max-w-screen-xl">
-            <h1 className="text-xs text-white dark:text-white md:text-3xl font-bold md:mb-2 w-[65%] md:w-[40%]">
-              {item.title}
-            </h1>
-            <p className="text-xs md:text-xs md:w-full w-65 dark:text-gray-200 md:py-3 py-2">
-              {item.text}
-            </p>
-            <Link to={"/"}>
-              <Button />
+              {slides[current].subtext}
+            </motion.p>
+            <Link to={"/getcontact"}>
+              <button
+                className="transition-all duration-500 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-4 py-2 sm:py-3 bg-[#EA7900] text-white cursor-pointer border-none rounded-[4px]
+              shadow-[2px_2px_0px_#ef9432,4px_4px_0px_#ffb347,6px_6px_0px_#ff9800,8px_8px_0px_#fb8c00,10px_10px_0px_#f57c00,12px_12px_0px_#ef6c00,14px_14px_0px_#e65100,16px_16px_0px_#bf360c,18px_18px_0px_#8e2800]
+              hover:bg-[#ff6a00] hover:text-white hover:shadow-none"
+              >
+                Contact Us
+              </button>
             </Link>
-          </div>
-        </div>
-
-        {/* Controls */}
-        <div className="absolute md:bottom-8 bottom-4 left-1/2 transform -translate-x-1/2 flex gap-6 z-20">
-          <ol className="flex justify-center gap-2 mt-4" role="tablist">
-            {carouselItems.map((_, index) => (
-              <li
-                key={index}
-                role="tab"
-                data-slide-to={index}
-                data-target="#vbp-carousel-3157"
-                onClick={() => setCurrent(index)}
-                className={`w-10 h-1 md:w-40 cursor-pointer transition-all duration-300 ${
-                  index === current ? "bg-[#EA7900]" : "bg-gray-400"
-                }`}
-              ></li>
-            ))}
-          </ol>
-        </div>
-
-        <style>{`
-    .clip-left {
-      clip-path: polygon(0 0, 100% 0, 0% 100%, 0 100%);
-    }
-
-   .clip-right {
-  clip-path: polygon(60% 0, 100% 0, 100% 100%, 0 100%);
-}
-
-  @media (max-width: 768px) {
-  .clip-left,
-  .clip-right {
-    width: 100%;
-    position: absolute;
-    margin: 0;
-    padding: 0;
-  }
-
-
-@media (max-width: 768px) {
-  .clip-left {
-    clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
-  }
-
-  .clip-right {
-    clip-path: polygon(75% 0, 100% 0, 100% 100%, 0 100%);
-  }
-}
-
-
-  `}</style>
+          </motion.div>
+        </AnimatePresence>
       </div>
-    </>
+
+      {/* Bottom glow */}
+      <div className="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-green-400/10 via-transparent to-transparent z-0" />
+    </section>
   );
 };
 
-export default Carousel;
+export default HeroCarousel;

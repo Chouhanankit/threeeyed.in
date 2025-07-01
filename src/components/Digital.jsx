@@ -1,36 +1,42 @@
 import React from "react";
-import SpotlightCard from "./SpotlightCard";
 import { Link } from "react-router-dom";
+import MainDigital from "./MainDigital";
 
 const Digital = () => {
   return (
     <>
-      <div className="bg-white pt-12 px-4 sm:px-6 lg:px-0">
-        <div className="max-w-9xl mx-auto pb-10">
+      <div className="bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155] pt-16 px-4 sm:px-6 lg:px-0 text-white font-sans">
+        <div className="max-w-9xl mx-auto pb-16 sticky">
           {/* Header */}
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-10 gap-6 max-w-7xl mx-auto">
-            <h2
-              data-aos="fade-left"
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black"
+          <div className="flex flex-col lg:flex-row items-start justify-between gap-10 mb-14 max-w-7xl mx-auto">
+            <div className="space-y-4">
+              <h2 className="text-4xl font-bold leading-tight">
+                Discover Our
+                <br />
+                <span className="text-orange-400">Marketing Features</span>
+              </h2>
+              <p
+                data-aos="flip-up"
+                className="text-lg sm:text-xl text-white/80 font-medium"
+              >
+                Let’s Check Our Services
+              </p>
+            </div>
+
+            <p
+              data-aos="fade-right"
+              className="text-base sm:text-lg text-white/60 leading-relaxed max-w-xl"
             >
-              Marketing and Optimization
-            </h2>
-            <p data-aos="flip-up" className="text-xl text-black max-w-md">
-              Let’s Check Our Services
-            </p>
-            <p data-aos="fade-right" className="text-sm text-gray-600 max-w-md">
-              We guide businesses and brands towards growth by providing Social
-              Media Optimization, Online Ads, Facebook Ads, Instagram Ads,
-              YouTube Ads, LinkedIn Ads, Twitter Ads, and more.
+              We guide businesses and brands toward growth through intelligent
+              marketing strategies — including Social Media Optimization, Online
+              Ads, Facebook, Instagram, YouTube, LinkedIn, Twitter, and more.
             </p>
           </div>
 
           {/* Card */}
-          <Link to={"/marketing"}>
-            <div className="max-w-7xl mx-auto grid  gap-4 lg:grid-flow-dense auto-rows-[200px] sm:auto-rows-[180px] grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
-              <SpotlightCard />
+            <div  className="max-w-7xl mx-auto">
+              <MainDigital />
             </div>
-          </Link>
         </div>
       </div>
     </>

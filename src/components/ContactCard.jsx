@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { useRef } from "react";
-
+import React, { useEffect, useState, useRef } from "react";
+import AOS from "aos";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -10,9 +9,24 @@ import {
 import "aos/dist/aos.css";
 import { toast } from "react-toastify";
 
+const carouselTexts = [
+  "Empowering businesses across industries with innovative solutions.",
+  "Custom IT, marketing, and branding tailored for your sector.",
+  "Partner with us to transform your digital presence.",
+];
+
 const ContactCard = () => {
   const [loading, setLoading] = useState(false);
+  const [current, setCurrent] = useState(0);
   const form = useRef();
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % carouselTexts.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -24,10 +38,7 @@ const ContactCard = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
@@ -38,9 +49,7 @@ const ContactCard = () => {
       `https://threeeyedbackend.onrender.com/api/user/register/mail`,
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       }
     ).then(async (res) => {
@@ -71,9 +80,7 @@ const ContactCard = () => {
           },
         },
       })
-      .finally(() => {
-        setLoading(false);
-      });
+      .finally(() => setLoading(false));
   };
 
   const contactDetails = [
@@ -119,15 +126,32 @@ const ContactCard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-200 py-12 px-2 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-start">
-        {/* Contact Info */}
+    <div className="min-h-screen bg-gradient-to-b bg-noise from-white to-orange-50 py-16 px-4 sm:px-8 lg:px-12">
+      <div className="relative h-[70vh] w-full bg-gradient-to-r from-[#EA7900]/50 to-[#001F3D]/60 flex items-center justify-center px-6 text-center rounded-xl shadow-md">
+        <div className="max-w-4xl mx-auto text-[#EA7900]/60">
+          <h1
+            data-aos="fade-up"
+            className="text-3xl sm:text-5xl lg:text-6xl font-extrabold mb-6 uppercase text-white/90"
+          >
+            Contact Us
+          </h1>
+          <p
+            key={current}
+            className="text-base sm:text-xl transition-opacity duration-700 ease-in-out"
+            data-aos="fade-in"
+          >
+            {carouselTexts[current]}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-20 max-w-8xl mx-auto grid md:grid-cols-2 gap-10 items-start">
         <div
-          className="bg-[#FFF6EF] p-6 sm:p-10 rounded-2xl shadow-lg"
+          className="bg-white/60 p-8 rounded-xl shadow-xl border border-[#f2f2f2]"
           data-aos="fade-right"
         >
           <h2 className="text-3xl font-bold text-[#EA7900] mb-6">
-            Contact Info
+            Contact Information
           </h2>
           <div className="space-y-6 text-gray-800">
             {contactDetails.map((item, index) => (
@@ -144,18 +168,15 @@ const ContactCard = () => {
           </div>
         </div>
 
-        {/* Contact Form */}
         <div
-          className="bg-white p-6 sm:p-10 rounded-2xl shadow-lg border border-[#f2f2f2] max-w-2xl mx-auto"
+          className="bg-white/60 p-7 rounded-xl shadow-xl border border-[#f2f2f2]"
           data-aos="fade-left"
         >
-          <h2 className="text-3xl font-bold text-[#EA7900] mb-2">
-            Let’s Connect
-          </h2>
-          <p className="text-gray-600 mb-6">
-            Interested in a website, SEO, branding, or digital marketing?
+          <h2 className="text-3xl font-bold text-[#EA7900] mb-2">Let’s Talk</h2>
+          <p className="text-gray-200 mb-6">
+            Have questions or need help with your next big idea?{" "}
             <br className="hidden sm:block" />
-            Fill out the form below and our team will be in touch shortly.
+            Fill out this form and we’ll get back to you within 24 hours.
           </p>
 
           <form ref={form} onSubmit={handleSubmit} className="space-y-5">
@@ -167,9 +188,8 @@ const ContactCard = () => {
                 onChange={handleChange}
                 required
                 placeholder="Full Name"
-                className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:ring-[#EA7900] focus:border-[#EA7900] outline-none"
+                className="w-full px-4 py-2 border placeholder:text-black/60 text-black border-gray-300 rounded-md focus:ring-[#EA7900] focus:border-[#EA7900] outline-none"
               />
-
               <input
                 type="email"
                 name="email"
@@ -177,10 +197,9 @@ const ContactCard = () => {
                 onChange={handleChange}
                 required
                 placeholder="Email Address"
-                className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:ring-[#EA7900] focus:border-[#EA7900] outline-none"
+                className="w-full px-4 py-2 border placeholder:text-black/60 text-black border-gray-300 rounded-md focus:ring-[#EA7900] focus:border-[#EA7900] outline-none"
               />
             </div>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 type="tel"
@@ -189,9 +208,8 @@ const ContactCard = () => {
                 onChange={handleChange}
                 required
                 placeholder="Phone Number"
-                className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:ring-[#EA7900] focus:border-[#EA7900] outline-none"
+                className="w-full px-4 py-2 border placeholder:text-black/60 text-black border-gray-300 rounded-md focus:ring-[#EA7900] focus:border-[#EA7900] outline-none"
               />
-
               <input
                 type="text"
                 name="subject"
@@ -199,24 +217,22 @@ const ContactCard = () => {
                 onChange={handleChange}
                 required
                 placeholder="Subject (e.g. Website / SEO / Ads)"
-                className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:ring-[#EA7900] focus:border-[#EA7900] outline-none"
+                className="w-full px-4 py-2 border placeholder:text-black/60 text-black border-gray-300 rounded-md focus:ring-[#EA7900] focus:border-[#EA7900] outline-none"
               />
             </div>
-
             <textarea
               name="message"
               rows="5"
               value={formData.message}
               onChange={handleChange}
               required
-              placeholder="Tell us about your project or what you need help with..."
-              className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:ring-[#EA7900] focus:border-[#EA7900] outline-none"
+              placeholder="Tell us what you're looking for..."
+              className="w-full px-4 py-2 border placeholder:text-black/60 text-black border-gray-600 rounded-md focus:ring-[#EA7900] focus:border-[#EA7900] outline-none"
             />
-
             <button
               type="submit"
               disabled={loading}
-              className={`w-full py-2 rounded-md font-semibold transition ${
+              className={`w-full py-3 rounded-md font-semibold transition ${
                 loading
                   ? "bg-orange-300 cursor-not-allowed"
                   : "bg-[#EA7900] hover:bg-orange-600 text-white"
@@ -242,7 +258,7 @@ const ContactCard = () => {
                       className="opacity-75"
                       fill="currentColor"
                       d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"
-                    ></path>
+                    />
                   </svg>
                   Sending...
                 </span>

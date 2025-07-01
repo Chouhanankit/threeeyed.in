@@ -1,14 +1,13 @@
-import React from "react";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import grid1 from "../assets/grid1.jpg";
-import grid2 from "../assets/grid2.png";
+import grid2 from "../assets/grid2.jpg";
 import grid3 from "../assets/grid3.jpg";
 import grid4 from "../assets/grid4.jpg";
 import grid5 from "../assets/grid5.jpg";
 import grid6 from "../assets/grid6.jpg";
 import grid7 from "../assets/grid7.jpg";
 import grid8 from "../assets/grid8.jpg";
-import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -66,60 +65,53 @@ const CardComponent = () => {
 
   useEffect(() => {
     const container = scrollRef.current;
-    let scrollAmount = 0;
-    let isMobile = window.innerWidth <= 640; // Tailwind's `sm` breakpoint
+    let isMobile = window.innerWidth <= 640;
 
     if (!container || !isMobile) return;
 
-    const scrollInterval = setInterval(() => {
-      scrollAmount += 1;
+    const interval = setInterval(() => {
       if (
         container.scrollLeft + container.offsetWidth >=
         container.scrollWidth
       ) {
-        scrollAmount = 0; // Reset to start
         container.scrollLeft = 0;
       } else {
         container.scrollLeft += 1;
       }
-    }, 20); // Adjust speed
+    }, 20);
 
-    return () => clearInterval(scrollInterval);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <>
-      <Link to={"/getcapabilities"}>
+    <section className="px-4 py-10">
+      <Link to="/services">
         <div
           ref={scrollRef}
-          className="flex overflow-x-auto gap-4 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:overflow-visible scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100"
+          className="flex gap-6 overflow-x-auto sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:overflow-visible scrollbar-thin scrollbar-thumb-[#EA7900]/70 scrollbar-track-gray-200"
         >
           {services.map((service, index) => (
             <div
-              data-aos="zoom-in"
               key={index}
-              className="min-w-[280px] sm:w-full h-96 flex-shrink-0 sm:flex-shrink bg-cover bg-center relative rounded-0 shadow-lg group"
-              style={{
-                backgroundImage: `url(${service.image})`,
-              }}
+              data-aos="zoom-in"
+              className="min-w-[280px] sm:w-full h-96 flex-shrink-0 bg-center bg-cover relative rounded-xl shadow-xl group overflow-hidden transition-all duration-500 ease-in-out"
+              style={{ backgroundImage: `url(${service.image})` }}
             >
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/60 lg:group-hover:backdrop-blur-md lg:group-hover:bg-black/70 transition duration-500"></div>
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 hover:backdrop-blur-sm transition duration-500"></div>
 
-              {/* Text Content */}
-              <div className="absolute top-10 left-6 right-6 text-white transition-all duration-500">
+              {/* Content */}
+              <div className="absolute top-10 left-6 right-6 text-white">
                 <h2 className="text-xl font-bold">{service.title}</h2>
-                {service.description && (
-                  <p className="mt-4 text-sm opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition duration-500">
-                    {service.description}
-                  </p>
-                )}
+                <p className="mt-4 text-sm opacity-100 lg:opacity-0 group-hover:opacity-100 transition duration-500">
+                  {service.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </Link>
-    </>
+    </section>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import threeeyedlogo from "../assets/logo3eyed.png";
+import threeeyedlogo from "../assets/logo3eyed.jpg";
 import { Link } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
@@ -29,45 +29,45 @@ const NavbarItems = [
   {
     id: 2,
     text: "SERVICES",
-    link: "/getcapabilities",
+    link: "/services",
     dropdown: {
       "Web Development": [
         {
           id: "2-1",
           text: "Frontend Development",
-          link: "/capabilities/frontend-development",
+          link: "/service/frontend-development",
         },
         {
           id: "2-2",
           text: "Backend Development",
-          link: "/capabilities/backend-development",
+          link: "/service/backend-development",
         },
         {
           id: "2-3",
           text: "Full-Stack Development",
-          link: "/capabilities/custom-web-development",
+          link: "/service/custom-web-development",
         },
         {
           id: "2-4",
           text: "E-Commerce Solutions",
-          link: "/capabilities/e-commerce-development",
+          link: "/service/e-commerce-development",
         },
       ],
       "Digital Marketing": [
-        { id: "2-5", text: "SEO", link: "/capabilities/website-optimization" },
+        { id: "2-5", text: "SEO", link: "/service/website-optimization" },
         {
           id: "2-6",
           text: "Content Marketing",
-          link: "/capabilities/content-management-systems",
+          link: "/service/content-management-systems",
         },
       ],
       "Other Services": [
-        { id: "2-9", text: "UI/UX Design", link: "/capabilities/ui-ux-design" },
+        { id: "2-9", text: "UI/UX Design", link: "/service/ui-ux-design" },
 
         {
           id: "2-11",
           text: "Analytics & Reporting",
-          link: "/capabilities/website-maintenance",
+          link: "/service/website-maintenance",
         },
       ],
     },
@@ -98,53 +98,53 @@ const NavbarItems = [
   },
   {
     id: 4,
-    text: "MARKETING",
-    link: "/marketing",
+    text: "PORTFOLIO",
+    link: "/portfolio",
     dropdown: {
-      "Social Media Marketing": [
+      "Marketing Campaigns": [
         {
           id: "4-1",
-          text: "Instagram Marketing",
-          link: "/marketing",
+          text: "Instagram Campaign Strategy",
+          link: "/portfolio",
         },
         {
           id: "4-2",
-          text: "Facebook Advertising",
-          link: "/marketing",
+          text: "Facebook Ad Funnel Success",
+          link: "/portfolio",
         },
         {
           id: "4-3",
-          text: "Twitter Marketing",
-          link: "/marketing",
+          text: "X (Twitter) Trend Engagement",
+          link: "/portfolio",
         },
         {
           id: "4-4",
-          text: "LinkedIn Outreach",
-          link: "/marketing",
+          text: "LinkedIn B2B Lead Outreach",
+          link: "/portfolio",
         },
       ],
-      "Platform Management": [
+      "Platform Growth Projects": [
         {
           id: "4-5",
-          text: "Google Business Management",
-          link: "/marketing",
+          text: "Google My Business Optimization",
+          link: "/portfolio",
         },
         {
           id: "4-6",
-          text: "YouTube Promotion",
-          link: "/marketing",
+          text: "YouTube Organic Promotion",
+          link: "/portfolio",
         },
       ],
-      "Content & Optimization": [
+      "Creative Content & SEO": [
         {
           id: "4-7",
-          text: "Social Media Optimization",
-          link: "/marketing",
+          text: "Social Media SEO Optimization",
+          link: "/portfolio",
         },
         {
           id: "4-8",
-          text: "Content Marketing",
-          link: "/marketing",
+          text: "Content-Driven Marketing Funnels",
+          link: "/portfolio",
         },
       ],
     },
@@ -207,7 +207,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black fixed z-40 shadow top-0 w-full md:h-24 h-20 mb-0  text-white ">
+    <nav className="bg-gradient-to-t from-[#0a0a0a] to-[#1c1c1c] fixed z-40 shadow top-0 w-full md:h-24 h-20 mb-0  text-white ">
       <div className="lg:max-w-screen-2xl max-w-screen-xl mx-auto py-4 flex justify-between items-center w-full sm:px-8 md:px-8 px-3">
         {/* Logo */}
         <Link to="/" onClick={handleMobileLinkClick}>
@@ -241,14 +241,14 @@ const Navbar = () => {
               {/* Full-screen dropdown */}
               {item.dropdown && openDropdown === item.id && (
                 <div
-                  className="fixed left-0 top-24 pb-12 w-full bg-white text-black z-40 shadow-lg"
+                  className="fixed left-0 top-24 pb-12 w-full bg-white/90 text-black z-40 shadow-lg"
                   onMouseEnter={() => handleMouseEnter(item.id)}
                   onMouseLeave={() => {
                     setTimeout(() => {
                       setOpenDropdown((prev) =>
                         prev === item.id ? null : prev
                       );
-                    }, 2000); // 2 seconds delay
+                    }, 0);
                   }}
                 >
                   <div className="max-w-8xl mx-auto px-10 py-8 grid grid-cols-4 gap-8">
@@ -256,7 +256,7 @@ const Navbar = () => {
                       ([category, links], idx) => (
                         <div key={category || idx}>
                           {category && (
-                            <h4 className="font-semibold mb-3">{category}</h4>
+                            <h2 className="font-semibold mb-3 text-[#EA7900]">{category}</h2>
                           )}
                           <ul className="space-y-2 text-sm">
                             {links.map((linkItem) => (

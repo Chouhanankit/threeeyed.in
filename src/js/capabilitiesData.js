@@ -2,247 +2,217 @@ const capabilities = [
   {
     title: "Custom Web Development Tailored to Your Business",
     slug: "custom-web-development",
-    intro:
-      "We create bespoke web solutions that reflect your brand identity and meet your unique business objectives. Our team develops fast, scalable, and secure websites with optimal performance and user experience.",
-    definitionTitle: "What is Custom Web Development?",
-    definition:
-      "Custom web development refers to building a website from the ground up, tailored specifically to your business needs. It’s free from template limitations, giving you full control over design, functionality, and scalability.",
-    featuresTitle: "Key Features & Benefits",
-    features: [
-      "Tailored Functionality: Built to suit your exact business logic and goals.",
-      "Unique Design: A one-of-a-kind interface that aligns with your brand.",
-      "Scalable Architecture: Easily handle traffic spikes and growth.",
-      "Better Performance: Lightweight, optimized codebases.",
-      "Enhanced Security: No bloated third-party code or vulnerabilities.",
+    shortPitch:
+      "We build websites from scratch—100% customized to your business needs, brand, and functionality. No templates, no shortcuts.",
+    detailedDescription:
+      "At Three-Eyed Pvt. Ltd., we specialize in creating bespoke websites that align perfectly with your business goals. Our team handles everything—from research and design to scalable frontend and backend development—ensuring top-notch performance, SEO, and long-term growth.",
+    processTitle: "Our Development Process",
+    processSteps: [
+      "Discovery & Strategy – We understand your business, goals, and users.",
+      "Custom UI/UX Design – Unique, branded, and responsive designs.",
+      "Frontend Development – Using React, Next.js, Tailwind for smooth UI.",
+      "Backend Development – Robust logic with Node.js, Laravel, or .NET.",
+      "Testing & Optimization – QA, speed, SEO, and security testing.",
+      "Deployment & Support – Hosting, launch, and ongoing maintenance.",
     ],
-    techTitle: "Technologies We Use",
-    techIntro:
-      "Our tech stack ensures future-ready, maintainable, and performant websites:",
-    technologies: [
-      "Frontend: React, Vue.js, Next.js",
-      "Backend: Node.js, Laravel, Django, .NET",
-      "Databases: MongoDB, MySQL, PostgreSQL",
-      "Infrastructure: AWS, Vercel, Netlify, Docker",
+    whyChooseUsTitle: "Why Choose Three-Eyed?",
+    whyChooseUs: [
+      "No templates—fully custom design & development.",
+      "Built for performance, SEO, and security.",
+      "Scalable architecture for future growth.",
+      "You get 100% ownership of the code.",
     ],
-    whyTitle: "Why Custom Development?",
-    whyText:
-      "Custom development empowers your business with flexibility and control. We build web apps that are efficient, scalable, and built to grow with your business—no compromise on speed, design, or functionality.",
+    examplePitch:
+      "Imagine a website that reflects your exact workflow, brand tone, and goals—designed and coded just for you. That’s what we deliver.",
     ctaText: "Start a Custom Web Project",
     ctaLink: "/getcontact",
   },
   {
     title: "E-Commerce Development Solutions to Elevate Your Online Store",
     slug: "e-commerce-development",
-    intro:
-      "Our expert team delivers powerful e-commerce development services tailored to your brand, products, and target audience. We build feature-rich, scalable, and secure online stores that not only look great but also convert visitors into loyal customers.",
-    definitionTitle: "What is E-Commerce Development?",
-    definition:
-      "E-commerce development involves designing, building, and maintaining online stores or marketplaces. This includes everything from intuitive user interfaces and smooth checkout experiences to inventory management, payment gateway integration, and mobile optimization.",
-    featuresTitle: "Key Features & Benefits",
-    features: [
-      "Custom Store Design: Unique, branded interfaces optimized for conversion.",
-      "Payment Gateway Integration: Secure transactions with PayPal, Stripe, Razorpay, and more.",
-      "Mobile-First Experience: Fully responsive design for every device.",
-      "Inventory & Order Management: Real-time tracking and updates.",
-      "SEO & Performance Optimized: Fast, search engine-friendly architecture.",
+    shortPitch:
+      "We build custom e-commerce stores that look stunning, perform flawlessly, and convert better.",
+    detailedDescription:
+      "Our expert team delivers scalable e-commerce websites tailored to your brand and audience. We focus on performance, mobile experience, security, and smooth user journeys—from product discovery to checkout.",
+    processTitle: "Our E-Commerce Process",
+    processSteps: [
+      "Market & UX Analysis",
+      "Custom Store Design & Development",
+      "Payment & Inventory Integration",
+      "SEO & Speed Optimization",
+      "Testing & Launch",
     ],
-    techTitle: "Technologies We Use",
-    techIntro:
-      "We leverage top tools and frameworks to ensure robust, scalable online store development:",
-    technologies: [
-      "Shopify, WooCommerce, Magento (Platform-based)",
-      "React, Next.js, Vue (Custom Frontend)",
-      "Node.js, Laravel, .NET (Custom Backend)",
-      "Stripe, PayPal, Razorpay (Payment Integrations)",
+    whyChooseUsTitle: "Why Work With Us?",
+    whyChooseUs: [
+      "Custom designs that match your brand.",
+      "Integrated payments and inventory systems.",
+      "Mobile-first experience.",
+      "SEO-focused development.",
     ],
-    whyTitle: "Why Partner With Us?",
-    whyText:
-      "Whether you're starting fresh or upgrading an existing store, we provide strategic e-commerce solutions that drive growth, improve UX, and maximize ROI. From MVP to enterprise-grade systems—we’ve got you covered.",
+    examplePitch:
+      "We don’t just build online stores—we create high-converting shopping experiences built for scale and sales.",
     ctaText: "Start Your E-Commerce Project",
     ctaLink: "/getcontact",
   },
   {
     title: "Content Management Systems (CMS) for Easy Website Control",
     slug: "content-management-systems",
-    intro:
-      "We implement and customize top CMS platforms to give you complete control over your content. Manage pages, posts, media, and more with user-friendly interfaces tailored to your needs.",
-    definitionTitle: "What is a CMS?",
-    definition:
-      "A Content Management System allows you to manage website content without coding. You can add, edit, and remove content via a visual interface, streamlining updates and team collaboration.",
-    featuresTitle: "Key Features & Benefits",
-    features: [
-      "Easy Content Editing: No coding skills needed to update pages.",
-      "Media & File Management: Centralized control over images, videos, and documents.",
-      "Custom Themes & Plugins: Personalized design and features.",
-      "User Access Control: Manage roles and permissions easily.",
-      "Multilingual Capabilities: Serve audiences in multiple languages.",
+    shortPitch:
+      "Manage your website content without writing code—secure, scalable, and easy to use.",
+    detailedDescription:
+      "We implement and customize top CMS platforms like WordPress, Sanity, and Strapi so you can manage your content efficiently. Get full control over pages, posts, media, and more—tailored for your business.",
+    processTitle: "Our CMS Approach",
+    processSteps: [
+      "CMS Selection Based on Your Needs",
+      "Custom Theme Development",
+      "Admin Panel & Content Types Setup",
+      "User Roles & Access Control",
+      "Training & Documentation",
     ],
-    techTitle: "CMS Platforms We Work With",
-    techIntro:
-      "We implement popular CMSs and extend their functionality to fit your business:",
-    technologies: [
-      "WordPress, Drupal, Joomla (Open Source)",
-      "Shopify, BigCommerce (E-Commerce CMS)",
-      "Strapi, Sanity, Contentful (Headless CMS)",
-      "Custom CMS Solutions (Built From Scratch)",
+    whyChooseUsTitle: "Why Our CMS Solutions?",
+    whyChooseUs: [
+      "Visual editing with zero code.",
+      "Multilingual and SEO ready.",
+      "Safe and secure admin panels.",
+      "Custom themes and plugins.",
     ],
-    whyTitle: "Why Choose a CMS?",
-    whyText:
-      "CMS platforms save time and reduce technical complexity, empowering your team to manage content independently. With a well-implemented CMS, updates are fast, consistent, and secure.",
+    examplePitch:
+      "From WordPress to Headless CMS, we help you take full control of your content without technical hassles.",
     ctaText: "Talk to a CMS Expert",
     ctaLink: "/getcontact",
   },
   {
     title: "UI/UX Design That Inspires Engagement and Conversion",
     slug: "ui-ux-design",
-    intro:
-      "We craft digital experiences that captivate users and drive results. Our UI/UX design process is rooted in user behavior, brand alignment, and conversion psychology.",
-    definitionTitle: "What is UI/UX Design?",
-    definition:
-      "UI (User Interface) design focuses on the visual elements of a digital product, while UX (User Experience) design ensures a seamless and intuitive interaction with your website or app.",
-    featuresTitle: "Key Features & Benefits",
-    features: [
-      "User Research: Data-driven insights into your audience.",
-      "Wireframing & Prototyping: Rapid design testing and iteration.",
-      "Responsive Design: Seamless experience across devices.",
-      "Interactive Elements: Smooth animations and micro-interactions.",
-      "Conversion-Focused Layouts: Design that drives action.",
+    shortPitch:
+      "We craft beautiful, intuitive interfaces based on real user behavior and brand psychology.",
+    detailedDescription:
+      "From user research and wireframes to micro-interactions and prototypes, we build digital experiences that delight users and convert visitors into customers.",
+    processTitle: "Our UI/UX Process",
+    processSteps: [
+      "User Research & Competitive Audit",
+      "Wireframes & User Flows",
+      "High-Fidelity Designs",
+      "Interactive Prototypes",
+      "Developer Handoff",
     ],
-    techTitle: "Design Tools We Use",
-    techIntro:
-      "We use top-tier design tools for wireframes, prototypes, and high-fidelity mockups:",
-    technologies: [
-      "Figma, Adobe XD, Sketch (Design & Prototyping)",
-      "InVision, Zeplin (Handoff & Collaboration)",
-      "Framer Motion, Tailwind CSS (Implementation)",
+    whyChooseUsTitle: "Why Good UX/UI Matters?",
+    whyChooseUs: [
+      "Boosts conversion & engagement.",
+      "Reduces bounce and drop-offs.",
+      "Builds trust with your audience.",
+      "Improves retention and loyalty.",
     ],
-    whyTitle: "Why UI/UX Matters?",
-    whyText:
-      "Great design isn't just visual—it enhances usability, builds trust, and increases conversions. We deliver experiences that look stunning and work effortlessly.",
+    examplePitch:
+      "Good design is invisible—it guides users naturally. That’s what we aim for in every project.",
     ctaText: "Start Your UX/UI Design Project",
     ctaLink: "/getcontact",
   },
   {
     title: "Frontend Development that’s Fast, Fluid, and Future-Ready",
     slug: "frontend-development",
-    intro:
-      "We build clean, component-driven, and scalable frontend interfaces using modern frameworks. Whether it's a marketing site or a complex dashboard, we deliver blazing-fast performance and pixel-perfect UI.",
-    definitionTitle: "What is Frontend Development?",
-    definition:
-      "Frontend development focuses on the client side of web applications—what users see and interact with. It involves coding interfaces using HTML, CSS, JavaScript, and frameworks like React or Vue.",
-    featuresTitle: "Key Features & Benefits",
-    features: [
-      "Responsive Layouts: Optimized for all screen sizes.",
-      "Reusable Components: Scalable, maintainable code.",
-      "Animations & Transitions: Smooth and engaging UI.",
-      "Accessibility: WCAG-compliant and inclusive design.",
-      "Performance Optimization: Fast load times and interactions.",
+    shortPitch:
+      "We create high-performance interfaces using React, Vue, and Next.js, optimized for every device.",
+    detailedDescription:
+      "Our frontend developers deliver responsive, fast, and accessible UIs using component-driven architectures. Whether you need a website, web app, or dashboard—we’ve got it covered.",
+    processTitle: "Frontend Workflow",
+    processSteps: [
+      "Design-to-Code Conversion",
+      "Component-Based Development",
+      "Mobile & Cross-Browser Testing",
+      "SEO & Accessibility Optimization",
+      "Performance Tuning",
     ],
-    techTitle: "Our Frontend Stack",
-    techIntro:
-      "We use modern libraries and tooling for clean and efficient UIs:",
-    technologies: [
-      "React, Next.js, Vue.js, Angular",
-      "Tailwind CSS, Sass, CSS Modules",
-      "Framer Motion, GSAP (Animations)",
-      "Webpack, Vite, ESLint, Prettier",
+    whyChooseUsTitle: "Why Our Frontend Team?",
+    whyChooseUs: [
+      "Pixel-perfect UI from Figma/Sketch.",
+      "Responsive, mobile-first builds.",
+      "Code built to scale & maintain.",
+      "Animations that enhance UX.",
     ],
-    whyTitle: "Why Choose Our Frontend Experts?",
-    whyText:
-      "We prioritize performance, scalability, and stunning design. Our frontend code is maintainable, fast, and made to grow with your business.",
+    examplePitch:
+      "We turn your vision into code that works beautifully across screens and browsers.",
     ctaText: "Hire Frontend Developers",
     ctaLink: "/getcontact",
   },
   {
     title: "Backend Development & APIs for Powerful Business Logic",
     slug: "backend-development",
-    intro:
-      "We develop robust backend systems and APIs to power complex business workflows, data operations, and integrations. From databases to server logic, we ensure security, speed, and scalability.",
-    definitionTitle: "What is Backend Development?",
-    definition:
-      "Backend development refers to building the server-side of web applications—handling business logic, databases, authentication, APIs, and communication between the frontend and server.",
-    featuresTitle: "Key Features & Benefits",
-    features: [
-      "Secure Authentication & Authorization",
-      "Database Design & Management",
-      "Custom RESTful & GraphQL APIs",
-      "Third-Party Integrations (e.g. CRMs, ERPs)",
-      "Scalable Microservices Architecture",
+    shortPitch:
+      "We build the logic and infrastructure behind your app—secure, scalable, and fully tailored.",
+    detailedDescription:
+      "Our backend developers handle everything behind the scenes—APIs, databases, authentication, microservices, and integrations—so your app runs smoothly and securely.",
+    processTitle: "Backend Workflow",
+    processSteps: [
+      "Database Schema Design",
+      "API Development (REST/GraphQL)",
+      "Authentication & Authorization",
+      "Third-party Integrations",
+      "DevOps & Deployment Setup",
     ],
-    techTitle: "Backend Technologies We Use",
-    techIntro:
-      "We pick the best tools for your project’s scale and requirements:",
-    technologies: [
-      "Node.js, Express, Laravel, .NET Core",
-      "MongoDB, PostgreSQL, MySQL",
-      "GraphQL, REST, WebSockets",
-      "AWS, Firebase, Docker, CI/CD Pipelines",
+    whyChooseUsTitle: "Why Choose Our Backend Team?",
+    whyChooseUs: [
+      "Custom API design for your app.",
+      "Secure and scalable server logic.",
+      "Real-time updates & integrations.",
+      "Cloud-ready deployment (AWS, Firebase, Docker).",
     ],
-    whyTitle: "Why Our Backend Team?",
-    whyText:
-      "We engineer secure, scalable, and high-performance backend systems that align with your business logic—whether you're building a SaaS, an e-commerce store, or an enterprise app.",
+    examplePitch:
+      "A solid backend is the engine of any great app—we build them to be bulletproof.",
     ctaText: "Build Your Backend Infrastructure",
     ctaLink: "/getcontact",
   },
   {
     title: "Website Optimization & SEO for Speed and Visibility",
     slug: "website-optimization",
-    intro:
-      "We optimize websites to load fast and rank high. From page speed to keyword optimization, we ensure your site delivers a top-tier user experience and increased search engine traffic.",
-    definitionTitle: "What is Website Optimization & SEO?",
-    definition:
-      "Website optimization enhances speed, accessibility, and overall performance. SEO (Search Engine Optimization) ensures your site ranks well on search engines through content, structure, and technical enhancements.",
-    featuresTitle: "Key Features & Benefits",
-    features: [
-      "Core Web Vitals Optimization",
-      "On-Page SEO (Meta Tags, Headings, URLs)",
-      "Image & Code Compression",
-      "Schema Markup & Rich Snippets",
-      "Content Strategy & Keyword Research",
+    shortPitch:
+      "We make your website faster and more discoverable by search engines through smart technical and content optimization.",
+    detailedDescription:
+      "From improving Core Web Vitals and image optimization to SEO audits and structured data—we optimize your site for performance, rankings, and conversions.",
+    processTitle: "Optimization Strategy",
+    processSteps: [
+      "Performance Audit & PageSpeed Fixes",
+      "SEO Audit & Keyword Mapping",
+      "Code & Image Compression",
+      "Schema Integration & Rich Snippets",
+      "Mobile & Accessibility Improvements",
     ],
-    techTitle: "Tools & Techniques We Use",
-    techIntro:
-      "We combine manual audits and advanced tools for maximum site performance:",
-    technologies: [
-      "Google PageSpeed, GTmetrix, Lighthouse",
-      "Ahrefs, SEMrush, Google Search Console",
-      "Next.js/Image, lazy loading, WebP formats",
-      "Structured Data, Robots.txt, Sitemaps",
+    whyChooseUsTitle: "Why Optimization Matters?",
+    whyChooseUs: [
+      "Better rankings & visibility.",
+      "Faster load times = lower bounce rate.",
+      "Improved mobile experience.",
+      "Higher conversions & retention.",
     ],
-    whyTitle: "Why Optimization Matters?",
-    whyText:
-      "A slow or poorly optimized website turns users away and hurts rankings. We build and optimize sites that are fast, visible, and conversion-driven.",
+    examplePitch:
+      "A slow site costs you traffic and sales—let us help you fix that.",
     ctaText: "Get an SEO Audit",
     ctaLink: "/getcontact",
   },
   {
     title: "Website Maintenance & Support for Continuous Performance",
     slug: "website-maintenance",
-    intro:
-      "Our ongoing website maintenance and support services ensure your site stays secure, up-to-date, and fully functional—so you can focus on your business while we handle the tech.",
-    definitionTitle: "What is Website Maintenance & Support?",
-    definition:
-      "Website maintenance includes regularly updating software, fixing bugs, enhancing security, monitoring uptime, and making content or design updates. Support services provide expert assistance for troubleshooting, updates, and improvements.",
-    featuresTitle: "Key Features & Benefits",
-    features: [
-      "Regular Updates: Plugin, theme, and CMS updates to ensure compatibility.",
-      "24/7 Monitoring: Uptime and performance tracking to catch issues early.",
-      "Security Management: Ongoing scans, firewall setups, and vulnerability patches.",
-      "Bug Fixes & Enhancements: Quick resolution of functional or visual issues.",
-      "Content & Design Updates: Fresh content and UI tweaks to keep your site relevant.",
+    shortPitch:
+      "We keep your website secure, up-to-date, and running smoothly—so you can focus on your business.",
+    detailedDescription:
+      "Our maintenance plans include everything from CMS/plugin updates, backups, and uptime monitoring to security patches, bug fixes, and new feature support.",
+    processTitle: "Maintenance Coverage",
+    processSteps: [
+      "Plugin & CMS Updates",
+      "24/7 Uptime Monitoring",
+      "Security Patching & Firewall Setup",
+      "Bug Fixing & Performance Tuning",
+      "Content & UI Updates",
     ],
-    techTitle: "Tools & Technologies We Use",
-    techIntro:
-      "We use a combination of proactive monitoring tools and manual checks to ensure optimal performance:",
-    technologies: [
-      "WordPress, Shopify, Magento (Platform Maintenance)",
-      "Uptime Robot, Pingdom, Sucuri (Monitoring & Security)",
-      "Git, CI/CD pipelines (Safe Deployment)",
-      "Trello, Asana, Jira (Task Management & Support)",
+    whyChooseUsTitle: "Why You Need Maintenance?",
+    whyChooseUs: [
+      "Prevents downtime and issues.",
+      "Keeps security up to date.",
+      "Supports long-term SEO and speed.",
+      "Gives you peace of mind.",
     ],
-    whyTitle: "Why Choose Us for Maintenance?",
-    whyText:
-      "We don’t just build websites—we help you run them smoothly over time. Our responsive team ensures you’re never left alone with technical issues. Expect peace of mind, better security, and consistent performance.",
+    examplePitch:
+      "We don’t just build websites—we make sure they stay fast, safe, and functional.",
     ctaText: "Request Ongoing Support",
     ctaLink: "/getcontact",
   },

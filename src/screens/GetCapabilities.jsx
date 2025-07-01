@@ -1,18 +1,17 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import ReactPlayer from "react-player";
-import { Link } from "react-router-dom";
-import CardComponent from "../components/CardComponent";
+import React, { useEffect, useState } from "react";
+import CapabilityCard from "../components/CapabilityCard";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import grid1 from "../assets/grid1.jpg";
-import grid2 from "../assets/grid2.png";
+import grid2 from "../assets/grid2.jpg";
 import grid3 from "../assets/grid3.jpg";
 import grid4 from "../assets/grid4.jpg";
 import grid5 from "../assets/grid5.jpg";
 import grid6 from "../assets/grid6.jpg";
 import grid7 from "../assets/grid7.jpg";
 import grid8 from "../assets/grid8.jpg";
-import CapabilityCard from "../components/CapabilityCard";
-import capabilities from "../js/capabilitiesData";
+import Contact from "../components/Contact";
 
 const services = [
   {
@@ -26,20 +25,12 @@ const services = [
     image: grid2,
   },
   {
-    title: "Content Management Systems (CMS)",
+    title: "Content Management Systems",
     slug: "content-management-systems",
     image: grid3,
   },
-  {
-    title: "UI/UX Design",
-    slug: "ui/ux-design",
-    image: grid4,
-  },
-  {
-    title: "Frontend Development",
-    slug: "frontend-development",
-    image: grid5,
-  },
+  { title: "UI/UX Design", slug: "ui-ux-design", image: grid4 },
+  { title: "Frontend Development", slug: "frontend-development", image: grid5 },
   {
     title: "Backend Development & APIs",
     slug: "backend-development",
@@ -57,136 +48,98 @@ const services = [
   },
 ];
 
-const carouselItems = [
-  {
-    videoUrl:
-      "https://res.cloudinary.com/dg2seao8x/video/upload/v1747903780/lcm3py79bm05iv6xi22j.mp4",
-  },
+const carouselTexts = [
+  "We deliver digital innovation tailored to your needs.",
+  "Building fast, scalable, and user-friendly web platforms.",
+  "One team. One mission. Real-world digital solutions.",
 ];
 
 const GetCapabilities = () => {
-  const [current, setCurrent] = useState(0);
-  const item = carouselItems[current];
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    AOS.init({ duration: 1000 });
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev === carouselItems.length - 1 ? 0 : prev + 1));
-    }, 5000);
+      setCurrentIndex((prev) => (prev + 1) % carouselTexts.length);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <>
-      <>
-        <div className="w-full min-h-screen  bg-white">
-          <div className="relative w-full h-screen overflow-hidden flex items-center justify-center">
-            {/* Left diagonal section - 60% */}
-            <div className="absolute md:top-0 top-0 md:left-0 md:w-[100%]  h-full bg-white clip-left z-20 flex justify-center items-center mx-auto max-w-screen-xl">
-              {/* Text Half */}
-              <div
-                data-aos="fade-up"
-                className="absolute text-black w-[90%] left-4 md:left-24 top-32 md:w-1/2 md:top-40 p-2 md:p-0 "
-              >
-                <h1
-                  data-aos-duration="3000"
-                  className="text-2xl md:text-7xl font-bold mb-3 md:mb-6"
-                >
-                  Our Services
-                </h1>
-                <p className="text-[12px] w-[60%] md:w-full md:text-base">
-                  Our portfolio of offerings spans competencies, specialisms,
-                  and application services that align with our customers'
-                  changing worlds.
-                </p>
-              </div>
-            </div>
+    <div className="w-full font-sans bg-white/80">
+      {/* Hero Carousel Section */}
+      <div className="relative h-[70vh] w-full bg-noise bg-[#171717] flex items-center justify-center px-6 text-center">
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-[#00ffc3]/10 blur-[150px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0" />
+        <div className="max-w-4xl mx-auto text-white/80">
+          <h1
+            data-aos="fade-up"
+            className="text-3xl sm:text-5xl lg:text-6xl font-extrabold mb-6 uppercase"
+          >
+            Our Services
+          </h1>
+          <p
+            key={currentIndex}
+            className="text-base sm:text-xl transition-opacity duration-700 ease-in-out"
+            data-aos="fade-in"
+          >
+            {carouselTexts[currentIndex]}
+          </p>
+        </div>
+        <div className="absolute bottom-0 left-0 w-full h-[200px] bg-gradient-to-t from-green-400/10 via-transparent to-transparent z-0" />
+      </div>
 
-            {/* Right diagonal section - 40% */}
-            <div className="relative w-full h-screen z-0 overflow-hidden">
-              {/* Video Background */}
-              <div className="absolute inset-0 z-0">
-                <ReactPlayer
-                  url={item.videoUrl}
-                  playing
-                  loop
-                  muted
-                  controls={false}
-                  playsinline
-                  width="100%"
-                  height="100%"
-                  style={{ objectFit: "cover" }}
-                  config={{
-                    file: {
-                      attributes: {
-                        playsInline: true,
-                        muted: true,
-                        autoPlay: true,
-                        preload: "auto",
-                        style: {
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                        },
-                      },
-                    },
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-          {/* Card Area */}
-          <div className="mx-auto px-6 g:px-0 w-full max-w-8xl ">
-            <h1 className="text-black font-bold lg:text-5xl text-xl py-15">
-              What We Do
-            </h1>
-            <section className="pb-10 bg-white">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {services.map((cap) => (
-                  <CapabilityCard
-                    key={cap.slug}
-                    title={cap.title}
-                    image={cap.image}
-                    slug={cap.slug}
-                  />
-                ))}
-              </div>
-            </section>
-          </div>
+      {/* Service Cards Section */}
+      <section className="max-w-8xl mx-auto px-6 py-20">
+        <div className="text-start lg:flex justify-between items-start mb-12">
+          <h2
+            data-aos="fade-down"
+            className="text-2xl sm:text-4xl font-bold text-[#001F3D] mb-4"
+          >
+            What We Do
+          </h2>
+          <p
+            data-aos="fade-up"
+            className="text-base sm:text-lg max-w-5xl mx-auto text-gray-600 leading-relaxed"
+          >
+            At{" "}
+            <span className="font-semibold text-[#EA7900]">
+              Three-Eyed Pvt. Ltd.
+            </span>
+            , we specialize in{" "}
+            <span className="text-black font-medium">Custom Development</span>,{" "}
+            <span className="text-black font-medium">UI/UX Design</span>,{" "}
+            <span className="text-black font-medium">SEO Optimization</span>,
+            and{" "}
+            <span className="text-black font-medium">
+              Cloud-Ready Platforms
+            </span>
+            . Our mission is to deliver{" "}
+            <span className="text-[#EA7900] font-semibold">
+              transformative digital experiences
+            </span>{" "}
+            that help you scale with confidence in today’s competitive
+            landscape.
+          </p>
         </div>
 
-        <style>{`
-    .clip-left {
-      clip-path: polygon(0 0, 110% 0, 0% 100%, 0 100%);
-    }
-
-   .clip-right {
-  clip-path: polygon(60% 0, 100% 0, 100% 100%, 0 100%);
-}
-
-  @media (max-width: 768px) {
-  .clip-left,
-  .clip-right {
-    width: 100%;
-    position: absolute;
-    margin: 0;
-    padding: 0;
-  }
-
-
-@media (max-width: 768px) {
-  .clip-left {
-    clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
-  }
-
-  .clip-right {
-    clip-path: polygon(75% 0, 100% 0, 100% 100%, 0 100%);
-  }
-}
-
-
-  `}</style>
-      </>
-    </>
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          data-aos="fade-up"
+        >
+          {services.map((service, index) => (
+            <div key={index} data-aos="zoom-in" data-aos-delay={index * 100}>
+              <CapabilityCard
+                title={service.title}
+                image={service.image}
+                slug={service.slug}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* contact */}
+      <Contact />
+    </div>
   );
 };
 

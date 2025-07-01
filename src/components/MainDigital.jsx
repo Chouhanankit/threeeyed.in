@@ -1,13 +1,14 @@
 import React from "react";
-import insta from "../assets/instagram.jpg";
-import youtube from "../assets/youtube.jpg";
-import facebook from "../assets/facebook.jpg";
-import content from "../assets/content.jpg";
-import linkedin from "../assets/linkedin.jpg";
-import social from "../assets/socialmedia.jpg";
-import google from "../assets/google.jpg";
-import twitter from "../assets/twitter.jpg";
+import insta from "../assets/instagram.webp";
+import google from "../assets/google.webp";
+import youtube from "../assets/youtube.webp";
+import facebook from "../assets/facebook.webp";
+import social from "../assets/socialmedia.webp";
+import content from "../assets/content.webp";
+import linkedin from "../assets/linkedin.webp";
+import twitter from "../assets/twitter.webp";
 
+// Service data
 const digitalMarketingServices = [
   {
     title: "Instagram Marketing",
@@ -53,41 +54,36 @@ const digitalMarketingServices = [
   },
 ];
 
-const gridSpanClasses = [
-  "sm:col-span-2 sm:row-span-2",
-  "sm:col-span-1 sm:row-span-2",
-  "sm:col-span-2 sm:row-span-1",
-  "sm:col-span-3 sm:row-span-2",
-  "sm:col-span-1 sm:row-span-1",
-  "sm:col-span-2 sm:row-span-2",
-  "sm:col-span-1 sm:row-span-2",
-  "sm:col-span-3 sm:row-span-1",
-];
-
-const SpotlightCard = () => {
+const MainDigital = () => {
   return (
-    <>
-      {/* Dense Grid */}
+    <div
+      data-aos="flip-up"
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8"
+    >
       {digitalMarketingServices.map((service, index) => (
         <div
           key={index}
-          data-aos="zoom-in"
-          className={`relative group bg-cover bg-center rounded-0 shadow-md overflow-hidden col-span-1 row-span-1 ${
-            gridSpanClasses[index % gridSpanClasses.length]
-          }`}
-          style={{ backgroundImage: `url(${service.backgroundImage})` }}
+          className="w-full bg-gradient-to-br from-[#1c2e5a] to-[#0b1c35] rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center text-white shadow-xl border border-white/10 backdrop-blur-lg hover:scale-[1.01] transition duration-300"
         >
-          <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition duration-300"></div>
-          <div className="absolute top-6 left-6 right-6 text-white">
-            <h3 className="text-lg font-semibold">{service.title}</h3>
-            <p className="text-sm mt-2 opacity-100 text-gray-300">
-              {service.description}
-            </p>
+          {/* Image */}
+          <div className="w-full md:w-1/2 flex justify-center items-center mb-6 md:mb-0">
+            <img
+              src={service.backgroundImage}
+              alt={service.title}
+              className="w-32 h-32 object-cover rounded-xl shadow-md"
+            />
+          </div>
+
+          {/* Text */}
+          <div className="w-full md:w-1/2 text-center md:text-left space-y-2">
+            <h3 className="text-xl font-semibold">{service.title}</h3>
+            <hr className="my-1 border-white/20" />
+            <p className="text-sm text-gray-300">{service.description}</p>
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
-export default SpotlightCard;
+export default MainDigital;
