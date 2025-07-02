@@ -10,7 +10,7 @@ const CapabilityCard = ({ title, slug, image }) => {
       </div>
       <div className="flex items-center justify-between w-full">
         <h3 className="text-lg font-semibold">{title}</h3>
-        <Link to={`/capabilities/${slug}`}>
+        <Link to={`/service/${slug}`}>
           <ArrowRight className="ml-4" />
         </Link>
       </div>

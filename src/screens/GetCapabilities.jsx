@@ -89,7 +89,7 @@ const GetCapabilities = () => {
       </div>
 
       {/* Service Cards Section */}
-      <section className="max-w-8xl mx-auto px-6 py-20">
+      <section className="max-w-8xl mx-auto px-3 py-20">
         <div className="text-start lg:flex justify-between items-start mb-12">
           <h2
             data-aos="fade-down"
