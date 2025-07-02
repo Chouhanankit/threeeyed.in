@@ -6,6 +6,7 @@ import Digital from "../components/Digital";
 import AboutUsSection from "../components/AboutUsSection";
 import MidSection from "../components/MidSection";
 import MainIndustries from "../components/MainIndustries";
+import PortfolioCTA from "./PortfolioCTA";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Capabilities />
       <MainIndustries />
       <Digital />
+      <PortfolioCTA />
       <Contact />
     </>
   );

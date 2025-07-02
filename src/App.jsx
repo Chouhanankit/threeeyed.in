@@ -22,9 +22,7 @@ import TermsConditions from "./screens/TermsConditions";
 import WhatsAppChat from "./components/WhatsAppChat";
 import PortfolioPage from "./screens/PortfolioPage";
 
-
 const App = () => {
-  const [showCookiePrefs, setShowCookiePrefs] = useState(false);
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -56,7 +54,7 @@ const App = () => {
         <Route path="/terms-conditions" element={<TermsConditions />} />
       </Routes>
       <WhatsAppChat />
-      <Footer onCookiePrefsClick={() => setShowCookiePrefs(true)} />
+      <Footer />
     </Router>
   );
 };

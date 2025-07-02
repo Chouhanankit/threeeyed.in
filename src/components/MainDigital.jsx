@@ -8,7 +8,6 @@ import content from "../assets/content.webp";
 import linkedin from "../assets/linkedin.webp";
 import twitter from "../assets/twitter.webp";
 
-// Service data
 const digitalMarketingServices = [
   {
     title: "Instagram Marketing",
@@ -56,13 +55,11 @@ const digitalMarketingServices = [
 
 const MainDigital = () => {
   return (
-    <div
-      data-aos="flip-up"
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8"
-    >
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
       {digitalMarketingServices.map((service, index) => (
         <div
           key={index}
+          data-aos="flip-up"
           className="w-full bg-gradient-to-br from-[#1c2e5a] to-[#0b1c35] rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center text-white shadow-xl border border-white/10 backdrop-blur-lg hover:scale-[1.01] transition duration-300"
         >
           {/* Image */}

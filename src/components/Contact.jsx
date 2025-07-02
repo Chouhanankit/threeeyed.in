@@ -24,7 +24,7 @@ const Contact = () => {
             mission to build smarter digital experiences.
           </p>
           <Link to="/jointeam">
-            <button className="w-full lg:w-full py-4 px-8 border text-sm border-white text-white hover:bg-white hover:text-black hover:scale-105 active:scale-95 transition duration-200 ease-in-out">
+            <button className="w-auto lg:w-full py-4 px-8 border text-sm border-white text-white hover:bg-white hover:text-black hover:scale-105 active:scale-95 transition duration-200 ease-in-out">
               VIEW OPENINGS
             </button>
           </Link>
@@ -48,7 +48,7 @@ const Contact = () => {
             can bring your vision to life.
           </p>
           <Link to="/getcontact">
-            <button className="w-full lg:w-full py-4 px-8 border text-sm border-white text-white hover:bg-white hover:text-black hover:scale-105 active:scale-95 transition duration-200 ease-in-out">
+            <button className="w-auto lg:w-full py-4 px-8 border text-sm border-white text-white hover:bg-white hover:text-black hover:scale-105 active:scale-95 transition duration-200 ease-in-out">
               GET IN TOUCH
             </button>
           </Link>

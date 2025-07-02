@@ -32,7 +32,7 @@ const HeroCarousel = () => {
   }, []);
 
   return (
-    <section className="relative px-6 bg-noise md:px-12 lg:px-24 bg-[#171717] text-white overflow-hidden flex items-center justify-start h-[88vh]">
+    <section className="relative px-6 bg-noise md:px-12 lg:px-24 bg-[#171717] text-white overflow-hidden flex items-center justify-start h-[92vh]">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-[#00ffc3]/10 blur-[150px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0" />
 

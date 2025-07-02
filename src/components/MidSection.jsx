@@ -4,7 +4,7 @@ const MidSection = () => {
   return (
     <>
       {/* Top Navigation Tags (layout-fixed + animated content) */}
-      <div className="relative z-10">
+      <div className="relative top-[-20px] z-10">
         <div className="rounded-t-4xl overflow-hidden">
           <motion.div className="bg-gradient-to-r from-[#FF512F] to-[#F09819]">
             <div className="flex flex-wrap justify-center md:justify-evenly py-4 md:py-7 text-white text-xs sm:text-sm md:text-base lg:text-lg font-semibold gap-3 sm:gap-5 px-3">

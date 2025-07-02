@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import threeeyedlogo from "../assets/logo3eyed.jpg";
 import { Link } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const NavbarItems = [
   {
@@ -256,7 +257,9 @@ const Navbar = () => {
                       ([category, links], idx) => (
                         <div key={category || idx}>
                           {category && (
-                            <h2 className="font-semibold mb-3 text-[#EA7900]">{category}</h2>
+                            <h2 className="font-semibold mb-3 text-[#EA7900]">
+                              {category}
+                            </h2>
                           )}
                           <ul className="space-y-2 text-sm">
                             {links.map((linkItem) => (
@@ -296,14 +299,20 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <ul
-          className={`fixed md:hidden top-0 left-0 h-full w-4/5 max-w-xs bg-black z-50 transition-transform duration-500 ${
+          className={`fixed md:hidden top-0 left-0 h-full w-4/5 max-w-xs bg-gradient-to-t from-[#0a0a0a] to-[#1c1c1c] z-50 transition-transform duration-500 ${
             isNavbarOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
           <Link to="/" onClick={handleMobileLinkClick}>
-            <h1 className="text-2xl font-bold text-[#EA7900] m-4 cursor-pointer">
+            <motion.h1
+              className="text-2xl uppercase font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#EA7900] via-[#ffae42] to-[#EA7900] m-4 cursor-pointer tracking-wide"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              whileHover={{ scale: 1.05 }}
+            >
               Three Eyed
-            </h1>
+            </motion.h1>
           </Link>
 
           {NavbarItems.map((item) => (
@@ -315,7 +324,7 @@ const Navbar = () => {
                       prev === item.id ? null : item.id
                     )
                   }
-                  className="p-4 border-b  rounded-xl hover:bg-[#EA7900] hover:text-black duration-300 cursor-pointer border-gray-600 flex justify-between items-center"
+                  className="p-4 border-b  rounded-xl hover:bg-[#EA7900] hover:text-black  duration-300 cursor-pointer border-gray-600 flex justify-between items-center"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
@@ -350,9 +359,9 @@ const Navbar = () => {
 
               {/* Mobile Dropdown */}
               {item.dropdown && openDropdown === item.id && (
-                <ul className="pl-6 bg-black">
+                <ul className="pl-6 bg-gradient-to-t from-[#0a0a0a] to-[#1c1c1c]">
                   {item.dropdown && openDropdown === item.id && (
-                    <ul className="pl-6 bg-black">
+                    <ul className="pl-6 bg-gradient-to-t from-[#0a0a0a] to-[#1c1c1c]">
                       {Object.values(item.dropdown)
                         .flat()
                         .map((sub) => (
@@ -363,8 +372,8 @@ const Navbar = () => {
                             <Link
                               to={sub.link}
                               onClick={() => {
-                                handleMobileLinkClick(); // closes menu
-                                setOpenDropdown(null); // closes dropdown
+                                handleMobileLinkClick();
+                                setOpenDropdown(null);
                               }}
                             >
                               {sub.text}
