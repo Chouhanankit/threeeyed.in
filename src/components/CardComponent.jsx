@@ -84,7 +84,7 @@ const CardComponent = () => {
   }, []);
 
   return (
-    <section className="px-4 py-10">
+    <section className="py-10">
       <Link to="/services">
         <div
           ref={scrollRef}
