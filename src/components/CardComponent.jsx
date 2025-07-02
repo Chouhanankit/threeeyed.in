@@ -84,11 +84,11 @@ const CardComponent = () => {
   }, []);
 
   return (
-    <section className="py-10">
+    <section className="md:px-4 py-10">
       <Link to="/services">
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:overflow-visible scrollbar-thin scrollbar-thumb-[#EA7900]/70 scrollbar-track-gray-200"
+          className="flex gap-6 overflow-x-auto sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 sm:overflow-visible scrollbar-thin scrollbar-thumb-[#EA7900]/70 scrollbar-track-gray-200"
         >
           {services.map((service, index) => (
             <div
