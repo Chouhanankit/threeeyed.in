@@ -7,7 +7,7 @@ const Capabilities = () => {
       <div className="bg-noise bg-[#171717] text-white/80">
         <div className="mx-auto w-full max-w-8xl py-6 lg:py-14">
           {/* Text Area */}
-          <div className="flex p-4 lg:border-t-4 rounded-tl-4xl border-[#EA7900] flex-col lg:flex-row justify-between items-start gap-4">
+          <div className="flex p-2 lg:p-0 lg:border-t-4 rounded-tl-4xl border-[#EA7900] flex-col lg:flex-row justify-between items-start gap-4">
             <h1
               data-aos="fade-right"
               className="text-2xl lg:border-l-2 lg:border-b-4 lg:border-r-2 border-t-2 lg:border-t-0 border-[#EA7900] rounded-tl-4xl rounded-bl-4xl py-6 px-2 sm:text-4xl lg:text-5xl text-white/80 font-bold"
