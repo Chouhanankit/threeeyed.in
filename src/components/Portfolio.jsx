@@ -5,6 +5,22 @@ const categories = ["All", "Web", "App", "Marketing"];
 
 const portfolioData = [
   {
+    title: "Bindal Developers Real Estate Platform",
+    category: "Web",
+    description:
+      "We built a modern, responsive real estate website with integrated lead capture and a CMS for Bindal Developers, enhancing their online visibility.",
+    techStack: [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "SEO",
+      "Google Ads",
+    ],
+    outcome:
+      "3x increase in lead conversions and a 45% boost in traffic within 3 months",
+    link: "https://bindaldevelopersindia.com",
+  },
+  {
     title: "E-Commerce Web App",
     category: "Web",
     description:
@@ -149,6 +165,17 @@ const Portfolio = () => {
               <p className="text-sm italic text-green-400">
                 Outcome: {item.outcome}
               </p>
+
+              {item.link && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 px-4 py-2 text-sm font-medium text-white bg-orange-500 hover:bg-orange-600 rounded-md transition"
+                >
+                  Visit Website
+                </a>
+              )}
             </motion.div>
           ))}
         </div>

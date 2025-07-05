@@ -37,7 +37,7 @@ const HeroCarousel = () => {
       <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-[#00ffc3]/10 blur-[150px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0" />
 
       {/* Main Content */}
-      <div className="relative z-10 text-left max-w-6xl w-full flex flex-col items-start justify-center space-y-6 px-2">
+      <div className="relative z-10 text-left max-w-8xl w-full flex flex-col items-start justify-center space-y-6 px-2">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -47,7 +47,7 @@ const HeroCarousel = () => {
             transition={{ duration: 0.7 }}
             className="w-full"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-snug text-white uppercase break-words w-full max-w-full mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-snug text-white uppercase break-words w-full max-w-full mb-4">
               <span className="text-[#EA7900] inline-block">
                 <Typewriter
                   words={[slides[current].heading]}
@@ -69,17 +69,17 @@ const HeroCarousel = () => {
             >
               {slides[current].subtext}
             </motion.p>
-            <Link to={"/getcontact"}>
-              <button
-                className="transition-all duration-500 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-4 py-2 sm:py-3 bg-[#EA7900] text-white cursor-pointer border-none rounded-[4px]
-              shadow-[2px_2px_0px_#ef9432,4px_4px_0px_#ffb347,6px_6px_0px_#ff9800,8px_8px_0px_#fb8c00,10px_10px_0px_#f57c00,12px_12px_0px_#ef6c00,14px_14px_0px_#e65100,16px_16px_0px_#bf360c,18px_18px_0px_#8e2800]
-              hover:bg-[#ff6a00] hover:text-white hover:shadow-none"
-              >
-                Contact Us
-              </button>
-            </Link>
           </motion.div>
         </AnimatePresence>
+        <Link to={"/getcontact"}>
+          <button
+            className="transition-all duration-500 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-4 py-2 sm:py-3 bg-[#EA7900] text-white cursor-pointer border-none rounded-[4px]
+              shadow-[2px_2px_0px_#ef9432,4px_4px_0px_#ffb347,6px_6px_0px_#ff9800,8px_8px_0px_#fb8c00,10px_10px_0px_#f57c00,12px_12px_0px_#ef6c00,14px_14px_0px_#e65100,16px_16px_0px_#bf360c,18px_18px_0px_#8e2800]
+              hover:bg-[#ff6a00] hover:text-white hover:shadow-none"
+          >
+            Contact Us
+          </button>
+        </Link>
       </div>
 
       {/* Bottom glow */}
