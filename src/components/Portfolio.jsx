@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const categories = ["All", "Web", "App", "Marketing"];
+const categories = ["All", "Web", "Marketing"];
 
 const portfolioData = [
   {
@@ -9,13 +9,7 @@ const portfolioData = [
     category: "Web",
     description:
       "We built a modern, responsive real estate website with integrated lead capture and a CMS for Bindal Developers, enhancing their online visibility.",
-    techStack: [
-      "React",
-      "Tailwind CSS",
-      "Framer Motion",
-      "SEO",
-      "Google Ads",
-    ],
+    techStack: ["React", "Tailwind CSS", "Framer Motion", "SEO", "Google Ads"],
     outcome:
       "3x increase in lead conversions and a 45% boost in traffic within 3 months",
     link: "https://bindaldevelopersindia.com",
@@ -27,14 +21,6 @@ const portfolioData = [
       "Developed a scalable e-commerce website with real-time inventory management and payment integration.",
     techStack: ["React", "Node.js", "MongoDB"],
     outcome: "Increased online sales by 45% within 3 months.",
-  },
-  {
-    title: "Fitness Tracking App",
-    category: "App",
-    description:
-      "Mobile app for real-time fitness tracking, meal planning, and progress analytics.",
-    techStack: ["Flutter", "Firebase", "Google Fit API"],
-    outcome: "Achieved over 10,000 downloads in the first month.",
   },
   {
     title: "Digital Marketing Campaign",
@@ -51,14 +37,6 @@ const portfolioData = [
       "Designed and built a personal portfolio website with animated transitions and dark mode support.",
     techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
     outcome: "Boosted client inquiries by 50%.",
-  },
-  {
-    title: "Food Delivery App UI",
-    category: "App",
-    description:
-      "Created a modern UI/UX prototype for a food delivery app with smooth animations and user onboarding.",
-    techStack: ["Figma", "React Native"],
-    outcome: "Client approved design in the first iteration.",
   },
   {
     title: "SEO Optimization Project",
@@ -110,7 +88,7 @@ const Portfolio = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Explore a curated selection of web apps, mobile apps, and marketing
+            Explore a curated selection of web apps and marketing
             projects that demonstrate innovation, functionality, and real-world
             impact using cutting-edge technologies.
           </motion.p>

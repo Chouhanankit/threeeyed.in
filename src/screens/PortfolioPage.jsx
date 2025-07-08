@@ -44,8 +44,8 @@ const PortfolioPage = () => {
             className="text-white/80 text-base md:text-lg max-w-3xl mx-auto leading-relaxed"
           >
             Explore our cutting-edge work in{" "}
-            <span className="text-[#EA7900] font-medium">web development</span>,{" "}
-            <span className="text-[#EA7900] font-medium">mobile apps</span>, and{" "}
+            <span className="text-[#EA7900] font-medium">web development</span>{" "}
+            {" and "}
             <span className="text-[#EA7900] font-medium">
               digital marketing
             </span>{" "}
