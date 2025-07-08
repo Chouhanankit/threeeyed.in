@@ -39,7 +39,7 @@ const FounderPage = ({ animationStart = true }) => {
           animate={animationStart ? { y: 0, opacity: 1 } : {}}
           transition={{ delay: 0.5, duration: 1.5 }}
         >
-          Founder & CEO – Three-Eyed Pvt. Ltd.
+          Founder – Three-Eyed Pvt. Ltd.
         </motion.h2>
 
         <motion.p
