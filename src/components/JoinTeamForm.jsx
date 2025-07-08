@@ -60,7 +60,7 @@ export default function JoinTeamForm() {
     formDataToSend.append("employment_status", employmentStatus);
 
     const request = fetch(
-      `https://threeeyedbackend-1.onrender.com/api/user/join/team`,
+      `https://www.threeeyedlimited.com/api/user/join/team`,
       {
         method: "POST",
         body: formDataToSend,

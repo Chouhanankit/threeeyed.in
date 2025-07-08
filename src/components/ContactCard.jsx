@@ -46,7 +46,7 @@ const ContactCard = () => {
     setLoading(true);
 
     const requestPromise = fetch(
-      `https://threeeyedbackend-1.onrender.com/api/user/register/mail`,
+      `https://www.threeeyedlimited.com/api/user/register/mail`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
