@@ -126,7 +126,7 @@ const ContactCard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b bg-noise from-white to-orange-50 py-16 px-4 sm:px-8 lg:px-12">
+    <div className="min-h-screen bg-gradient-to-b bg-noise from-white to-orange-50 py-16 px-2 sm:px-8 lg:px-12">
       <div className="relative h-[70vh] w-full bg-gradient-to-r from-[#EA7900]/50 to-[#001F3D]/60 flex items-center justify-center px-6 text-center rounded-xl shadow-md">
         <div className="max-w-4xl mx-auto text-[#EA7900]/60">
           <h1

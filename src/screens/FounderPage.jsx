@@ -94,10 +94,10 @@ const FounderPage = ({ animationStart = true }) => {
               Strategy
             </h4>
             <p className="text-gray-700 text-sm leading-relaxed">
-              With an unwavering focus on client success, Our team crafts digital
-              transformation strategies that merge tech with human-centered
-              design. His goal: ensure every client’s journey ends in measurable
-              growth.
+              With an unwavering focus on client success, Our team crafts
+              digital transformation strategies that merge tech with
+              human-centered design. His goal: ensure every client’s journey
+              ends in measurable growth.
             </p>
           </motion.div>
 
