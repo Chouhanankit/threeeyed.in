@@ -3,15 +3,14 @@ import { motion } from "framer-motion";
 
 const Loader = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-black text-white">
+    <div className="h-screen flex items-center justify-center bg-[#0E0E0E]">
       <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-        className="border-4 border-orange-400 border-t-transparent rounded-full w-12 h-12"
-      ></motion.div>
-      <span className="ml-4 text-lg font-semibold tracking-wide">
-        Loading...
-      </span>
+        initial={{ scale: 0 }}
+        animate={{ scale: [0.9, 1.2, 0.9] }}
+        transition={{ repeat: Infinity, duration: 1.2 }}
+        className="w-16 h-16 border-4 border-[#EA7900] border-t-transparent rounded-full"
+      />
+      <span className="sr-only">Loading...</span>
     </div>
   );
 };
