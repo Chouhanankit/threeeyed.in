@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import Contact from "../components/Contact";
 
 const fadeUp = {
@@ -19,6 +19,36 @@ const fadeUp = {
 const AboutPage = () => {
   return (
     <div className="bg-noise bg-[#171717] text-white/90 font-sans">
+     
+      <Helmet>
+        <title>About Us | Three-Eyed Pvt. Ltd.</title>
+        <meta
+          name="description"
+          content="Learn about Three-Eyed Pvt. Ltd., a leading IT company in Indore, offering web development, digital marketing, branding, and full-stack solutions."
+        />
+        <meta
+          name="keywords"
+          content="Three-Eyed, About Us, IT Company Indore, Web Development, Digital Marketing, SEO, Team"
+        />
+        <meta name="author" content="Three-Eyed Pvt. Ltd." />
+
+        {/* Open Graph Meta */}
+        <meta property="og:title" content="About Us | Three-Eyed Pvt. Ltd." />
+        <meta
+          property="og:description"
+          content="Explore the journey, mission, and values of Three-Eyed Pvt. Ltd. — a full-stack web and marketing company based in India."
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dg2seao8x/image/upload/v1752144375/og-banner_ftgeyc.webp"
+        />
+        <meta
+          property="og:url"
+          content="https://www.threeeyedlimited.com/about"
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       {/* Hero Section */}
       <section className="bg-[#EA7900] lg:pt-40 pt-20 pb-24 px-6 sm:px-12 lg:px-24 text-center">
         <motion.div
@@ -44,16 +74,14 @@ const AboutPage = () => {
             {
               title: "Who We Are",
               content: (
-                <>
-                  <p>
-                    <strong>Three-Eyed Pvt. Ltd.</strong> is a fast-growing IT
-                    solutions company based in Indore, established in 2025. We
-                    specialize in delivering robust and scalable digital
-                    products including custom website design, full-stack
-                    development, eCommerce platforms, UI/UX design, mobile app
-                    development, cloud integration, and digital marketing.
-                  </p>
-                </>
+                <p>
+                  <strong>Three-Eyed Pvt. Ltd.</strong> is a fast-growing IT
+                  solutions company based in Indore, established in 2025. We
+                  specialize in delivering robust and scalable digital products
+                  including custom website design, full-stack development,
+                  eCommerce platforms, UI/UX design, mobile app development,
+                  cloud integration, and digital marketing.
+                </p>
               ),
             },
             {
@@ -145,7 +173,7 @@ const AboutPage = () => {
               solutions.
             </p>
             <div className="border-2 border-[#EA7900] w-full"></div>
-            {/* Contact */}
+            {/* Contact Form Section */}
             <Contact />
           </motion.div>
         </div>
