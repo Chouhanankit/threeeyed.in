@@ -1,26 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./screens/Home";
-import NotFound from "./screens/NotFound";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import GetContact from "./screens/GetContact";
-import GetJoinTeam from "./screens/GetJoinTeam";
-import GetCapabilities from "./screens/GetCapabilities";
-import CapabilitiesList from "./screens/CapabilitiesList";
-import CapabilityPage from "./screens/CapabilityPage";
-import IndustriesPage from "./screens/IndustriesPage";
-import AboutPage from "./screens/AboutPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import About from "./components/About";
-import FounderPage from "./screens/FounderPage";
-import PrivacyPolicy from "./screens/PrivacyPolicy";
-import TermsConditions from "./screens/TermsConditions";
+
+// Static Components
+import Navbar from "./components/Navbar";
 import WhatsAppChat from "./components/WhatsAppChat";
-import PortfolioPage from "./screens/PortfolioPage";
+
+// Lazy-loaded Screens
+const Home = lazy(() => import("./screens/Home"));
+const NotFound = lazy(() => import("./screens/NotFound"));
+const GetContact = lazy(() => import("./screens/GetContact"));
+const GetJoinTeam = lazy(() => import("./screens/GetJoinTeam"));
+const GetCapabilities = lazy(() => import("./screens/GetCapabilities"));
+const CapabilitiesList = lazy(() => import("./screens/CapabilitiesList"));
+const CapabilityPage = lazy(() => import("./screens/CapabilityPage"));
+const IndustriesPage = lazy(() => import("./screens/IndustriesPage"));
+const AboutPage = lazy(() => import("./screens/AboutPage"));
+const About = lazy(() => import("./components/About"));
+const FounderPage = lazy(() => import("./screens/FounderPage"));
+const PrivacyPolicy = lazy(() => import("./screens/PrivacyPolicy"));
+const TermsConditions = lazy(() => import("./screens/TermsConditions"));
+const PortfolioPage = lazy(() => import("./screens/PortfolioPage"));
+const Footer = lazy(() => import("./components/Footer"));
+import Loader from "./components/Loader";
 
 const App = () => {
   useEffect(() => {
@@ -37,24 +42,28 @@ const App = () => {
         position="top-center"
         toastClassName="w-[90vw] max-w-sm sm:w-auto !rounded-lg !shadow-md"
       />
-      <Routes>
-        <Route path="*" element={<NotFound />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/getcontact" element={<GetContact />} />
-        <Route path="/jointeam" element={<GetJoinTeam />} />
-        <Route path="/services" element={<GetCapabilities />} />
-        <Route path="/capabilities" element={<CapabilitiesList />} />
-        <Route path="/service/:slug" element={<CapabilityPage />} />
-        <Route path="/industries" element={<IndustriesPage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/about/careers" element={<About />} />
-        <Route path="/about/team" element={<FounderPage />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/terms-conditions" element={<TermsConditions />} />
-      </Routes>
+
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/getcontact" element={<GetContact />} />
+          <Route path="/jointeam" element={<GetJoinTeam />} />
+          <Route path="/services" element={<GetCapabilities />} />
+          <Route path="/capabilities" element={<CapabilitiesList />} />
+          <Route path="/service/:slug" element={<CapabilityPage />} />
+          <Route path="/industries" element={<IndustriesPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/about/careers" element={<About />} />
+          <Route path="/about/team" element={<FounderPage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </Suspense>
+
       <WhatsAppChat />
-      <Footer />
     </Router>
   );
 };
