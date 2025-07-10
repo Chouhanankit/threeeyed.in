@@ -71,11 +71,11 @@ const HeroCarousel = () => {
             </motion.p>
           </motion.div>
         </AnimatePresence>
-        <Link to={"/getcontact"}>
+        <Link to="/getcontact">
           <button
-            className="transition-all duration-500 text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-4 py-2 sm:py-3 bg-[#EA7900] text-white cursor-pointer border-none rounded-[4px]
-              shadow-[2px_2px_0px_#ef9432,4px_4px_0px_#ffb347,6px_6px_0px_#ff9800,8px_8px_0px_#fb8c00,10px_10px_0px_#f57c00,12px_12px_0px_#ef6c00,14px_14px_0px_#e65100,16px_16px_0px_#bf360c,18px_18px_0px_#8e2800]
-              hover:bg-[#ff6a00] hover:text-white hover:shadow-none"
+            className="transition-all duration-500 text-base sm:text-lg px-5 py-2 sm:px-6 sm:py-3
+               bg-[#de6c01] text-white rounded-md shadow-[2px_2px_0px_#ef9432,4px_4px_0px_#ffb347,6px_6px_0px_#ff9800,8px_8px_0px_#fb8c00]
+               hover:bg-[#b84d00] hover:shadow-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
           >
             Contact Us
           </button>
