@@ -15,6 +15,16 @@ const portfolioData = [
     link: "https://bindaldevelopersindia.com",
   },
   {
+    title: "Three-Eyed Pvt. Ltd. Official Website",
+    category: "Web",
+    description:
+      "Crafted a high-performance, modern website for Three-Eyed Pvt. Ltd., an IT & Marketing Company. The site highlights their services, showcases their portfolio, and supports lead generation.",
+    techStack: ["React", "Tailwind CSS", "Framer Motion", "NodeJS", "SEO"],
+    outcome:
+      "Improved client engagement and brand presence with a 60% boost in visitor interaction within the first months.",
+    link: "https://threeeyedlimited.com",
+  },
+  {
     title: "E-Commerce Web App",
     category: "Web",
     description:
@@ -88,9 +98,9 @@ const Portfolio = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Explore a curated selection of web apps and marketing
-            projects that demonstrate innovation, functionality, and real-world
-            impact using cutting-edge technologies.
+            Explore a curated selection of web apps and marketing projects that
+            demonstrate innovation, functionality, and real-world impact using
+            cutting-edge technologies.
           </motion.p>
         </div>
         {/* Category Filter */}
