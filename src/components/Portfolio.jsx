@@ -15,10 +15,10 @@ const portfolioData = [
     link: "https://bindaldevelopersindia.com",
   },
   {
-    title: "Three-Eyed Pvt. Ltd. Official Website",
+    title: "Three-Eyed Limited Official Website",
     category: "Web",
     description:
-      "Crafted a high-performance, modern website for Three-Eyed Pvt. Ltd., an IT & Marketing Company. The site highlights their services, showcases their portfolio, and supports lead generation.",
+      "Crafted a high-performance, modern website for Three-Eyed Limited, an IT & Marketing Company. The site highlights their services, showcases their portfolio, and supports lead generation.",
     techStack: ["React", "Tailwind CSS", "Framer Motion", "NodeJS", "SEO"],
     outcome:
       "Improved client engagement and brand presence with a 60% boost in visitor interaction within the first months.",
