@@ -39,7 +39,7 @@ const FounderPage = ({ animationStart = true }) => {
           animate={animationStart ? { y: 0, opacity: 1 } : {}}
           transition={{ delay: 0.5, duration: 1.5 }}
         >
-          Founder – Three-Eyed Pvt. Ltd.
+          Founder – Three-Eyed Limited
         </motion.h2>
 
         <motion.p
@@ -112,7 +112,7 @@ const FounderPage = ({ animationStart = true }) => {
               Culture
             </h4>
             <p className="text-gray-700 text-sm leading-relaxed">
-              At Three-Eyed, culture starts at the top. Our team believes in
+              At Three-Eyed Limited, culture starts at the top. Our team believes in
               mentoring talent, cultivating innovation, and maintaining an
               agile, inclusive environment that empowers every team member.
             </p>
