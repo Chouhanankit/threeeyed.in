@@ -9,7 +9,7 @@ const About = () => {
         data-aos="fade-down"
       >
         <h1 className="text-4xl sm:text-5xl font-extrabold text-[#EA7900] tracking-tight">
-          About Three-Eyed Pvt. Ltd.
+          About Three-Eyed Limited 
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
           Building high-impact digital experiences with world-class web and
@@ -25,7 +25,7 @@ const About = () => {
               Who We Are
             </h2>
             <p className="text-base leading-relaxed text-gray-700">
-              <strong>Three-Eyed Pvt. Ltd.</strong> is a fast-growing IT and
+              <strong>Three-Eyed Limited</strong> is a fast-growing IT and
               marketing company based in Indore, India. Since our founding in
               2025, we’ve helped businesses thrive online with end-to-end
               solutions including:
