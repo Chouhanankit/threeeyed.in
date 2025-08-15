@@ -19,7 +19,6 @@ const fadeUp = {
 const AboutPage = () => {
   return (
     <div className="bg-noise bg-[#171717] text-white/90 font-sans">
-     
       <Helmet>
         <title>About Us | Three-Eyed Limited</title>
         <meta

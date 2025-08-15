@@ -3,6 +3,7 @@ import GetIndustries from "../components/GetIndustries";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Contact from "../components/Contact";
+import { Helmet } from "react-helmet";
 
 const carouselTexts = [
   "Empowering industries with tailored digital solutions.",
@@ -24,6 +25,35 @@ const IndustriesPage = () => {
   return (
     <>
       <div className="w-full min-h-screen bg-white/80">
+        <Helmet>
+          <title>Industries | Three-Eyed Limited</title>
+          <meta
+            name="description"
+            content="Learn about Three-Eyed Limited, a leading IT company in Indore, offering web development, digital marketing, branding, and full-stack solutions."
+          />
+          <meta
+            name="keywords"
+            content="Three-Eyed, Industries, IT Company Indore, Web Development, Digital Marketing, SEO, Team"
+          />
+          <meta name="author" content="Three-Eyed Limited" />
+
+          {/* Open Graph Meta */}
+          <meta property="og:title" content="Industries | Three-Eyed Limited" />
+          <meta
+            property="og:description"
+            content="Explore the journey, mission, and values of Three-Eyed Limited — a full-stack web and marketing company based in India."
+          />
+          <meta
+            property="og:image"
+            content="https://res.cloudinary.com/dg2seao8x/image/upload/v1752144375/og-banner_ftgeyc.webp"
+          />
+          <meta
+            property="og:url"
+            content="https://www.threeeyedlimited.com/industries"
+          />
+          <meta property="og:type" content="website" />
+        </Helmet>
+
         {/* Hero Section */}
         <div className="relative h-[70vh] w-full bg-indigo-300 flex items-center justify-center px-6 text-center">
           <div className="max-w-4xl mx-auto text-black/90 ">

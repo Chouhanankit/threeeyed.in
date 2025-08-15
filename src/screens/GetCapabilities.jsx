@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import CapabilityCard from "../components/CapabilityCard";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import grid1 from "../assets/grid1.jpg";
 import grid2 from "../assets/grid2.jpg";
 import grid3 from "../assets/grid3.jpg";
@@ -12,6 +11,7 @@ import grid6 from "../assets/grid6.jpg";
 import grid7 from "../assets/grid7.jpg";
 import grid8 from "../assets/grid8.jpg";
 import Contact from "../components/Contact";
+import { Helmet } from "react-helmet";
 
 const services = [
   {
@@ -67,6 +67,35 @@ const GetCapabilities = () => {
 
   return (
     <div className="w-full font-sans bg-white/80">
+       <Helmet>
+        <title>Services | Three-Eyed Limited</title>
+        <meta
+          name="description"
+          content="Learn about Three-Eyed Limited, a leading IT company in Indore, offering web development, digital marketing, branding, and full-stack solutions."
+        />
+        <meta
+          name="keywords"
+          content="Three-Eyed, Services, IT Company Indore, Web Development, Digital Marketing, SEO, Team"
+        />
+        <meta name="author" content="Three-Eyed Limited" />
+
+        {/* Open Graph Meta */}
+        <meta property="og:title" content="Services | Three-Eyed Limited" />
+        <meta
+          property="og:description"
+          content="Explore the journey, mission, and values of Three-Eyed Limited — a full-stack web and marketing company based in India."
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dg2seao8x/image/upload/v1752144375/og-banner_ftgeyc.webp"
+        />
+        <meta
+          property="og:url"
+          content="https://www.threeeyedlimited.com/services"
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       {/* Hero Carousel Section */}
       <div className="relative h-[70vh] w-full bg-noise bg-[#171717] flex items-center justify-center px-6 text-center">
         <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-[#00ffc3]/10 blur-[150px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0" />

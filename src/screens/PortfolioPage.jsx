@@ -3,10 +3,39 @@ import Portfolio from "../components/Portfolio";
 import { motion } from "framer-motion";
 import Contact from "../components/Contact";
 import { Sparkles } from "lucide-react";
+import { Helmet } from "react-helmet";
 const PortfolioPage = () => {
   return (
     <>
       <section className="relative py-40 px-4 sm:px-8 lg:px-20 bg-[#001F3D] text-white overflow-hidden">
+        <Helmet>
+          <title>Portfolio | Three-Eyed Limited</title>
+          <meta
+            name="description"
+            content="Learn about Three-Eyed Limited, a leading IT company in Indore, offering web development, digital marketing, branding, and full-stack solutions."
+          />
+          <meta
+            name="keywords"
+            content="Three-Eyed, Portfolio, IT Company Indore, Web Development, Digital Marketing, SEO, Team"
+          />
+          <meta name="author" content="Three-Eyed Limited" />
+
+          {/* Open Graph Meta */}
+          <meta property="og:title" content="Portfolio | Three-Eyed Limited" />
+          <meta
+            property="og:description"
+            content="Explore the journey, mission, and values of Three-Eyed Limited — a full-stack web and marketing company based in India."
+          />
+          <meta
+            property="og:image"
+            content="https://res.cloudinary.com/dg2seao8x/image/upload/v1752144375/og-banner_ftgeyc.webp"
+          />
+          <meta
+            property="og:url"
+            content="https://www.threeeyedlimited.com/portfolio"
+          />
+          <meta property="og:type" content="website" />
+        </Helmet>
         {/* Background Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1f1f1f] to-[#EA7900]/20 opacity-40 blur-2xl z-0"></div>
 
