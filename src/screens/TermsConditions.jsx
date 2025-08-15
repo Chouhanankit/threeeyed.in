@@ -8,7 +8,7 @@ const TermsConditions = () => {
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-[#EA7900] mb-3">1. Introduction</h2>
         <p className="leading-relaxed">
-          Welcome to Three-Eyed Pvt. Ltd. These Terms & Conditions govern your use of our website and services in web development and marketing. By accessing or using our services, you agree to these terms.
+          Welcome to Three-Eyed Limited These Terms & Conditions govern your use of our website and services in web development and marketing. By accessing or using our services, you agree to these terms.
         </p>
       </section>
 
@@ -22,14 +22,14 @@ const TermsConditions = () => {
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-[#EA7900] mb-3">3. Intellectual Property</h2>
         <p className="leading-relaxed">
-          All content on this website, including text, graphics, logos, and software, is the property of Three-Eyed Pvt. Ltd or its licensors and is protected by intellectual property laws.
+          All content on this website, including text, graphics, logos, and software, is the property of Three-Eyed Limited or its licensors and is protected by intellectual property laws.
         </p>
       </section>
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-[#EA7900] mb-3">4. Limitation of Liability</h2>
         <p className="leading-relaxed">
-          Three-Eyed Pvt. Ltd is not liable for any damages arising from the use or inability to use our website or services. We provide our services “as is” without warranties of any kind.
+          Three-Eyed Limited is not liable for any damages arising from the use or inability to use our website or services. We provide our services “as is” without warranties of any kind.
         </p>
       </section>
 
@@ -50,7 +50,7 @@ const TermsConditions = () => {
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-[#EA7900] mb-3">7. Governing Law</h2>
         <p className="leading-relaxed">
-          These Terms are governed by the laws applicable in the jurisdiction where Three-Eyed Pvt. Ltd operates.
+          These Terms are governed by the laws applicable in the jurisdiction where Three-Eyed Limited operates.
         </p>
       </section>
 
@@ -62,7 +62,7 @@ const TermsConditions = () => {
             support@threeeyed.com
           </a>
           <br />
-          <strong>Three-Eyed Pvt. Ltd</strong>
+          <strong>Three-Eyed Limited</strong>
         </p>
       </section>
       

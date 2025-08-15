@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
           1. Introduction
         </h2>
         <p className="leading-relaxed">
-          At <strong>Three-Eyed Pvt. Ltd</strong>, we respect your privacy. This
+          At <strong>Three-Eyed Limited</strong>, we respect your privacy. This
           policy explains how we collect, use, and protect your data when you
           visit our website or use our web development and marketing services.
         </p>
