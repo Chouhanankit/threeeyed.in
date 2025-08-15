@@ -21,22 +21,22 @@ const AboutPage = () => {
     <div className="bg-noise bg-[#171717] text-white/90 font-sans">
      
       <Helmet>
-        <title>About Us | Three-Eyed Pvt. Ltd.</title>
+        <title>About Us | Three-Eyed Limited</title>
         <meta
           name="description"
-          content="Learn about Three-Eyed Pvt. Ltd., a leading IT company in Indore, offering web development, digital marketing, branding, and full-stack solutions."
+          content="Learn about Three-Eyed Limited, a leading IT company in Indore, offering web development, digital marketing, branding, and full-stack solutions."
         />
         <meta
           name="keywords"
           content="Three-Eyed, About Us, IT Company Indore, Web Development, Digital Marketing, SEO, Team"
         />
-        <meta name="author" content="Three-Eyed Pvt. Ltd." />
+        <meta name="author" content="Three-Eyed Limited" />
 
         {/* Open Graph Meta */}
-        <meta property="og:title" content="About Us | Three-Eyed Pvt. Ltd." />
+        <meta property="og:title" content="About Us | Three-Eyed Limited" />
         <meta
           property="og:description"
-          content="Explore the journey, mission, and values of Three-Eyed Pvt. Ltd. — a full-stack web and marketing company based in India."
+          content="Explore the journey, mission, and values of Three-Eyed Limited — a full-stack web and marketing company based in India."
         />
         <meta
           property="og:image"
@@ -58,7 +58,7 @@ const AboutPage = () => {
           className="max-w-6xl mx-auto"
         >
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 uppercase">
-            About Three-Eyed Pvt. Ltd.
+            About Three-Eyed Limited
           </h1>
           <p className="text-lg sm:text-xl font-light max-w-3xl mx-auto">
             Building high-impact digital experiences with world-class web and
@@ -75,7 +75,7 @@ const AboutPage = () => {
               title: "Who We Are",
               content: (
                 <p>
-                  <strong>Three-Eyed Pvt. Ltd.</strong> is a fast-growing IT
+                  <strong>Three-Eyed Limited</strong> is a fast-growing IT
                   solutions company based in Indore, established in 2025. We
                   specialize in delivering robust and scalable digital products
                   including custom website design, full-stack development,
@@ -169,7 +169,7 @@ const AboutPage = () => {
             </h2>
             <p className="text-base leading-relaxed mb-6">
               Ready to bring your digital vision to life? Partner with
-              Three-Eyed Pvt. Ltd. for innovative, reliable, and scalable
+              Three-Eyed Limited for innovative, reliable, and scalable
               solutions.
             </p>
             <div className="border-2 border-[#EA7900] w-full"></div>

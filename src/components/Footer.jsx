@@ -126,7 +126,7 @@ const Footer = () => {
           <p className="text-center sm:text-left mb-2 sm:mb-0">
             © 2025{" "}
             <Link to="/" className="hover:underline">
-              Three-Eyed Pvt. Ltd.
+              Three-Eyed Limited
             </Link>{" "}
             All rights reserved.
           </p>

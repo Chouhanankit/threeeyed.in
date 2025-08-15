@@ -103,7 +103,7 @@ const GetCapabilities = () => {
           >
             At{" "}
             <span className="font-semibold text-[#EA7900]">
-              Three-Eyed Pvt. Ltd.
+              Three-Eyed Limited
             </span>
             , we specialize in{" "}
             <span className="text-black font-medium">Custom Development</span>,{" "}

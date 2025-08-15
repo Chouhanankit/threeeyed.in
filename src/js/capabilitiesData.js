@@ -5,7 +5,7 @@ const capabilities = [
     shortPitch:
       "We build websites from scratch—100% customized to your business needs, brand, and functionality. No templates, no shortcuts.",
     detailedDescription:
-      "At Three-Eyed Pvt. Ltd., we specialize in creating bespoke websites that align perfectly with your business goals. Our team handles everything—from research and design to scalable frontend and backend development—ensuring top-notch performance, SEO, and long-term growth.",
+      "At Three-Eyed Limited, we specialize in creating bespoke websites that align perfectly with your business goals. Our team handles everything—from research and design to scalable frontend and backend development—ensuring top-notch performance, SEO, and long-term growth.",
     processTitle: "Our Development Process",
     processSteps: [
       "Discovery & Strategy – We understand your business, goals, and users.",
