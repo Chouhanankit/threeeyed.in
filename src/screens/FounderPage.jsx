@@ -2,6 +2,32 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+import AkshayNagdiya from "../assets/Akshay.webp"
+import Ishan from "../assets/ishan.webp"
+
+const employees = [
+  {
+    name: "Akshay Nagdiya",
+    role: "Full Stack Developer",
+    img: AkshayNagdiya, 
+    linkedin: "https://www.linkedin.com/in/akshay-nagdiya/", 
+    email: "mailto:nagdiyaakshay@gmail.com",
+  },
+  {
+    name: "Ishan Shriwas",
+    role: "Digital Marketing Specialist",
+    img: Ishan, 
+    linkedin: "https://www.linkedin.com/in/ishananilshriwas/",
+    email: "mailto:anilshriwas1515@gmail.com",
+  },
+  // {
+  //   name: "Ravi Singh Rajawat",
+  //   role: "Digital Marketing Specialist",
+  //   img: "https://ik.imagekit.io/mcyibc35n/rahul.jpg",
+  //   linkedin: "https://www.linkedin.com/in/ravi-singh-rajawat-88601b287/", 
+  //   email: "mailto:sravirajawat07@gmail.com",
+  // },
+];
 
 const FounderPage = ({ animationStart = true }) => {
   return (
@@ -14,7 +40,6 @@ const FounderPage = ({ animationStart = true }) => {
           animate={animationStart ? { opacity: 1 } : {}}
           transition={{ duration: 2 }}
         />
-
         <motion.img
           src="https://ik.imagekit.io/mcyibc35n/ANKITCHOUHAN_keONmmqvq?updatedAt=1750419725774"
           alt="Ankit Chouhan"
@@ -68,12 +93,14 @@ const FounderPage = ({ animationStart = true }) => {
           >
             <FaLinkedin />
           </a>
-          <Link
-            to="/getcontact"
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=chouhanankit489@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-orange-500 hover:text-white text-2xl transition-transform transform hover:scale-125"
           >
             <FaEnvelope />
-          </Link>
+          </a>
         </motion.div>
       </section>
 
@@ -84,7 +111,7 @@ const FounderPage = ({ animationStart = true }) => {
         </h3>
         <div className="grid gap-8 lg:grid-cols-2">
           <motion.div
-            className="bg-gray-100 rounded-xl p-6 shadow"
+            className="bg-gray-100 rounded-xl p-6 shadow hover:shadow-lg transition"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -94,15 +121,15 @@ const FounderPage = ({ animationStart = true }) => {
               Strategy
             </h4>
             <p className="text-gray-700 text-sm leading-relaxed">
-              With an unwavering focus on client success, Our team crafts
+              With an unwavering focus on client success, our team crafts
               digital transformation strategies that merge tech with
-              human-centered design. His goal: ensure every client’s journey
-              ends in measurable growth.
+              human-centered design. Goal: ensure every client’s journey ends in
+              measurable growth.
             </p>
           </motion.div>
 
           <motion.div
-            className="bg-gray-100 rounded-xl p-6 shadow"
+            className="bg-gray-100 rounded-xl p-6 shadow hover:shadow-lg transition"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -112,11 +139,60 @@ const FounderPage = ({ animationStart = true }) => {
               Culture
             </h4>
             <p className="text-gray-700 text-sm leading-relaxed">
-              At Three-Eyed Limited, culture starts at the top. Our team believes in
+              At Three-Eyed Limited, culture starts at the top. We believe in
               mentoring talent, cultivating innovation, and maintaining an
               agile, inclusive environment that empowers every team member.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Employee Section */}
+      <section className="relative py-20 px-6 md:px-20 bg-gradient-to-b from-gray-900 to-gray-800">
+        <h3 className="text-4xl font-extrabold text-center mb-14 text-white">
+          Meet Our <span className="text-[#EA7900]">Team</span>
+        </h3>
+
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {employees.map((emp, i) => (
+            <motion.div
+              key={i}
+              className="relative group bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl hover:border-orange-500/60 transition duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.2, duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              {/* Glow effect (now non-blocking clicks) */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#EA7900]/20 to-transparent opacity-0 group-hover:opacity-100 transition pointer-events-none"></div>
+
+              <img
+                src={emp.img}
+                alt={emp.name}
+                className="w-28 h-28 mx-auto rounded-full border-4 border-orange-500 shadow-lg mb-5 transform group-hover:scale-110 transition duration-300"
+              />
+              <h4 className="text-xl font-bold text-white">{emp.name}</h4>
+              <p className="text-gray-300 text-sm mt-1">{emp.role}</p>
+
+              {/* Social Links */}
+              <div className="flex justify-center gap-6 mt-6 text-orange-400 text-xl">
+                <a
+                  href={emp.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white transition-transform transform hover:scale-125"
+                >
+                  <FaLinkedin />
+                </a>
+                <a
+                  href={emp.email}
+                  className="hover:text-white transition-transform transform hover:scale-125"
+                >
+                  <FaEnvelope />
+                </a>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
     </div>

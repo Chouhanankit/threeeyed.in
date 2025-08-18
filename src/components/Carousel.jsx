@@ -7,7 +7,7 @@ const slides = [
   {
     heading: "Crafting Digital Excellence",
     subtext:
-      "At Three-Eyed Pvt. Ltd., we build next-gen websites and intelligent marketing strategies that drive real business growth.",
+      "At Three-Eyed Limited, we build next-gen websites and intelligent marketing strategies that drive real business growth.",
   },
   {
     heading: "Innovative IT & Marketing Solutions",

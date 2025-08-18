@@ -84,7 +84,7 @@ const NavbarItems = [
           text: "Company Fasted Growth",
           link: "/industries",
         },
-        { id: "3-4", text: "Three Eyed Pvt.Ltd", link: "/industries" },
+        { id: "3-4", text: "Three Eyed Limited", link: "/industries" },
       ],
       Team: [{ id: "3-2", text: "Three-Eyed", link: "/industries" }],
       "Corporate Citizenship": [
