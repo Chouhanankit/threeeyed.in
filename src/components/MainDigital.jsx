@@ -67,7 +67,7 @@ const MainDigital = () => {
             <img
               src={service.backgroundImage}
               alt={service.title}
-              className="w-32 h-32 object-cover rounded-xl shadow-md"
+              className="w-56 h-32 object-cover rounded-xl shadow-md"
             />
           </div>
 

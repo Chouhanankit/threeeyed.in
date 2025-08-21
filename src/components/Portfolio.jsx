@@ -15,6 +15,18 @@ const portfolioData = [
     link: "https://bindaldevelopersindia.com",
   },
   {
+    title: "Renovation – The Family Luxury Salon & Academy, Indore",
+    category: "Marketing",
+    description:
+      "Planned and executed a Google Business Ad campaign for Renovation – The Family Luxury Salon & Academy in Indore. The campaign focused on boosting local visibility, generating leads, and increasing walk-in customers.",
+    techStack: ["Google Ads", "Google My Business", "Google Analytics", "SEO"],
+    outcome:
+      "Achieved a 65% increase in local customer bookings and a 40% rise in salon foot traffic within the first 2 months.",
+    link: "https://share.google/8C0bejPhYt1H2LcMT",
+    date: "2025",
+    tags: ["Local SEO", "Google Ads", "Salon Marketing", "Lead Generation"],
+  },
+  {
     title: "Three-Eyed Limited Official Website",
     category: "Web",
     description:
