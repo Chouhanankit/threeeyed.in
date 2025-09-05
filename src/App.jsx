@@ -26,6 +26,7 @@ const TermsConditions = lazy(() => import("./screens/TermsConditions"));
 const PortfolioPage = lazy(() => import("./screens/PortfolioPage"));
 const Footer = lazy(() => import("./components/Footer"));
 import Loader from "./components/Loader";
+import ScrollToTop from "./components/ScrollTopComp";
 
 const App = () => {
   useEffect(() => {
@@ -37,6 +38,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <ToastContainer
         position="top-center"

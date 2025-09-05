@@ -46,6 +46,11 @@ const services = [
     slug: "website-maintenance",
     image: grid8,
   },
+  {
+    title: "Inventory Setup & Integration",
+    slug: "inventory-setup",
+    image: grid4,
+  },
 ];
 
 const carouselTexts = [
@@ -67,7 +72,7 @@ const GetCapabilities = () => {
 
   return (
     <div className="w-full font-sans bg-white/80">
-       <Helmet>
+      <Helmet>
         <title>Services | Three-Eyed Limited</title>
         <meta
           name="description"

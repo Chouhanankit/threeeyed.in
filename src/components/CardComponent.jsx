@@ -23,9 +23,9 @@ const services = [
     image: grid2,
   },
   {
-    title: "Content Management Systems (CMS)",
+    title: "Inventory System",
     description:
-      "We deliver flexible and user-friendly CMS solutions using WordPress, Strapi, or headless CMS for dynamic content management.",
+      "We provide smart and efficient inventory management solutions to help businesses track, manage, and optimize their stock with ease.",
     image: grid3,
   },
   {

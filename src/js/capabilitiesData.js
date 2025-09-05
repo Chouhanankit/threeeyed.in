@@ -216,5 +216,59 @@ const capabilities = [
     ctaText: "Request Ongoing Support",
     ctaLink: "/getcontact",
   },
+  {
+    title: "Smart Inventory Management",
+    slug: "inventory-setup",
+    shortPitch:
+      "Track, manage, and optimize your stock in real time with a centralized system.",
+    detailedDescription:
+      "Our inventory solutions give you full control over stock levels, movements, and valuations. With automation, you save time, reduce errors, and never miss a sale due to stock-outs.",
+    processTitle: "Inventory Process Coverage",
+    processSteps: [
+      "Real-Time Stock Updates",
+      "Barcode/QR Code Scanning",
+      "Purchase & Sales Linking",
+      "Stock Valuation & Audit",
+      "Multi-Warehouse Support",
+    ],
+    whyChooseUsTitle: "Why Use Our Inventory System?",
+    whyChooseUs: [
+      "Avoid overstocking or stockouts.",
+      "Save time with automated tracking.",
+      "Get instant reports & analytics.",
+      "Scale easily for growing businesses.",
+    ],
+    examplePitch:
+      "We help businesses stop guessing and start managing their stock with confidence.",
+    ctaText: "Request a Demo",
+    ctaLink: "/getcontact",
+  },
+  {
+    title: "Billing & Invoicing Automation",
+    slug: "billing-invoicing",
+    shortPitch:
+      "Simplify billing, invoicing, and payments—seamlessly connected with inventory.",
+    detailedDescription:
+      "Our system automates billing and invoicing, directly linked with stock management. Generate GST-ready invoices, manage returns, and track customer payments effortlessly.",
+    processTitle: "Billing & Invoicing Workflow",
+    processSteps: [
+      "Auto-Generate Invoices",
+      "GST & Tax Calculations",
+      "Payment Tracking",
+      "Credit/Debit Notes",
+      "Customer History Management",
+    ],
+    whyChooseUsTitle: "Why Choose Our Billing System?",
+    whyChooseUs: [
+      "Save time with automated invoices.",
+      "Ensure 100% accuracy in billing.",
+      "Easily integrate with accounting.",
+      "Improve customer satisfaction.",
+    ],
+    examplePitch:
+      "Turn your billing process into a hassle-free, automated system linked with your inventory.",
+    ctaText: "Automate Billing Now",
+    ctaLink: "/getcontact",
+  },
 ];
 export default capabilities;
