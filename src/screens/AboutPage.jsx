@@ -56,7 +56,7 @@ const AboutPage = () => {
           variants={fadeUp}
           className="max-w-6xl mx-auto"
         >
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 uppercase">
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
             About Three-Eyed Limited
           </h1>
           <p className="text-lg sm:text-xl font-light max-w-3xl mx-auto">

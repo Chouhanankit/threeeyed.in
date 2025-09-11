@@ -25,8 +25,10 @@ const PrivacyPolicy = lazy(() => import("./screens/PrivacyPolicy"));
 const TermsConditions = lazy(() => import("./screens/TermsConditions"));
 const PortfolioPage = lazy(() => import("./screens/PortfolioPage"));
 const Footer = lazy(() => import("./components/Footer"));
+
 import Loader from "./components/Loader";
 import ScrollToTop from "./components/ScrollTopComp";
+import usePageTracking from "./hook/usePageTracking";
 
 const App = () => {
   useEffect(() => {
@@ -38,6 +40,8 @@ const App = () => {
 
   return (
     <Router>
+      <PageTracker />
+
       <ScrollToTop />
       <Navbar />
       <ToastContainer
@@ -68,6 +72,11 @@ const App = () => {
       <WhatsAppChat />
     </Router>
   );
+};
+
+const PageTracker = () => {
+  usePageTracking();
+  return null;
 };
 
 export default App;
