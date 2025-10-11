@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaUsers, FaHandshake, FaSmile } from "react-icons/fa";
-import teamImage from "../assets/teamwork.webp";
+import teamImage from "../assets/about.webp";
 
 const AboutUsSection = () => {
   return (
