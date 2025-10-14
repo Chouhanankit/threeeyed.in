@@ -183,6 +183,7 @@ export default function JoinTeamForm() {
               <option value="Backend Developer">Backend Developer</option>
               <option value="Full-Stack Developer">Full-Stack Developer</option>
               <option value="UI/UX Designer">UI/UX Designer</option>
+              <option value="Content Creator">Content Creator</option>
               <option value="Other">Other</option>
             </select>
           </div>
@@ -349,3 +350,21 @@ export default function JoinTeamForm() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
