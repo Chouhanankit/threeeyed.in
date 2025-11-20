@@ -15,7 +15,7 @@ const employees = [
   },
   {
     name: "Ishan Shriwas",
-    role: "Digital Marketing Specialist",
+    role: "Business Development Manager",
     img: Ishan, 
     linkedin: "https://www.linkedin.com/in/ishananilshriwas/",
     email: "mailto:anilshriwas1515@gmail.com",
