@@ -41,7 +41,7 @@ const FounderPage = ({ animationStart = true }) => {
           transition={{ duration: 2 }}
         />
         <motion.img
-          src="https://ik.imagekit.io/mcyibc35n/ANKITCHOUHAN_keONmmqvq?updatedAt=1750419725774"
+          src="https://ik.imagekit.io/mcyibc35n/Ankit_Chouhan.jpeg"
           alt="Ankit Chouhan"
           className="w-40 h-40 rounded-full border-4 border-orange-500 shadow-xl mb-6 z-10"
           initial={{ scale: 0.8, opacity: 0 }}
